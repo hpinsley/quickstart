@@ -1,0 +1,37 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.22",
+    "es6-module-loader": "0.16.5",
+    "systemjs": "0.16.7"
+  },
+  "devDependencies": {
+    "connect": "^3.3.4",
+    "del": "~1.1.1",
+    "gulp": "~3.8.10",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-size": "^1.2.1",
+    "gulp-traceur": "0.17.*",
+    "open": "0.0.5",
+    "serve-static": "~1.8.1",
+    "systemjs-builder": "^0.10.3",
+    "through2": "~0.6.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "directories": {},
+    "dependencies": {},
+    "devDependencies": {
+      "traceur": "github:jmcriffey/bower-traceur@0.0.88",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
+    }
+  }
+}
