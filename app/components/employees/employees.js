@@ -9,27 +9,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, View, bootstrap } from 'angular2/angular2';
-import { EmployeeList } from '../app/components/employees/employees';
-var age = 24;
-let MyAppComponent = class {
+import { Component, View, For } from 'angular2/angular2';
+export class Employee {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+    get fullName() {
+        return this.first + " " + this.last;
+    }
+}
+export let EmployeeList = class {
     constructor() {
-        console.log("MyAppComponent has been constructed");
-        this.name = 'Howard';
+        this.age = 55;
+        console.log("Employee list has been constructed.");
+        this.employees = [
+            new Employee("Howard", "Pinsley"),
+            new Employee("David", "Pinsley")
+        ];
     }
 };
-MyAppComponent = __decorate([
+EmployeeList = __decorate([
     Component({
-        selector: 'my-app'
+        selector: 'employee-list'
     }),
     View({
-        template: `<h1>Hello there {{ name }}  you are ${age} years old</h1>
-    <h2>This is an H2</h2>
-    <employee-list></employee-list>
-    <div>After the employee list</div>
-    `,
-        directives: [EmployeeList]
+        templateUrl: 'app/components/employees/EmployeeList.html',
+        directives: [For]
     }), 
     __metadata('design:paramtypes', [])
-], MyAppComponent);
-bootstrap(MyAppComponent);
+], EmployeeList);

@@ -1,7 +1,7 @@
 /// <reference path="../typings/angular2/angular2.d.ts" />
-/// <reference path="./employees.ts" />
+/// <reference path="./../app/components/employees/employees.ts" />
 import {Component, View, bootstrap} from 'angular2/angular2'
-import {EmployeeList} from './employees'
+import {EmployeeList} from '../app/components/employees/employees'
 var age = 24;
 
 @Component({

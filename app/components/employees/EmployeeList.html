@@ -1,0 +1,19 @@
+<b>You are {{age}} years old</b>
+<div>
+    There are {{employees.length}} employees.
+    The first employee is {{employees[0].fullName}}
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>First</th>
+            <th>Last</th>
+            <th>Full</th>
+        </tr>
+    </thead>
+    <tr *for="#employee of employees">
+        <td>{{employee.first}}</td>
+        <td>{{employee.last}}</td>
+        <td>{{employee.fullName}}</td>
+    </tr>
+</table>
