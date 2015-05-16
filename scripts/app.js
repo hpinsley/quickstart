@@ -23,11 +23,7 @@ MyAppComponent = __decorate([
         selector: 'my-app'
     }),
     View({
-        template: `<h1>Hello there {{ name }}  you are ${age} years old</h1>
-    <h2>This is an H2</h2>
-    <employee-list></employee-list>
-    <div>After the employee list</div>
-    `,
+        templateUrl: 'scripts/app.html',
         directives: [EmployeeList]
     }), 
     __metadata('design:paramtypes', [])
