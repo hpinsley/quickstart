@@ -1,7 +1,7 @@
 /// <reference path="../typings/angular2/angular2.d.ts" />
-/// <reference path="./../app/components/employees/employees.ts" />
+/// <reference path="./../app/components/employees/EmployeePage.ts" />
 import {Component, View, bootstrap} from 'angular2/angular2'
-import {EmployeeList} from '../app/components/employees/employees'
+import {EmployeePage} from '../app/components/employees/EmployeePage'
 var age = 24;
 
 @Component({
@@ -9,7 +9,7 @@ var age = 24;
 })
 @View({
     templateUrl: 'scripts/app.html',
-    directives: [EmployeeList]
+    directives: [EmployeePage]
 })
 // Component controller
 class MyAppComponent {

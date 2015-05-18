@@ -9,23 +9,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, View, bootstrap } from 'angular2/angular2';
-import { EmployeePage } from '../app/components/employees/EmployeePage';
-var age = 24;
-let MyAppComponent = class {
+import { Component, View } from 'angular2/angular2';
+export let EmployeeForm = class {
     constructor() {
-        console.log("MyAppComponent has been constructed");
-        this.name = 'Howard';
     }
 };
-MyAppComponent = __decorate([
+EmployeeForm = __decorate([
     Component({
-        selector: 'my-app'
+        selector: 'employee-form'
     }),
     View({
-        templateUrl: 'scripts/app.html',
-        directives: [EmployeePage]
+        templateUrl: 'app/components/employees/EmployeeForm.html',
+        directives: []
     }), 
     __metadata('design:paramtypes', [])
-], MyAppComponent);
-bootstrap(MyAppComponent);
+], EmployeeForm);

@@ -1,25 +1,6 @@
 /// <reference path="../../../typings/angular2/angular2.d.ts" />
 import {Component, View, bootstrap, For} from 'angular2/angular2'
-
-interface IEmployee {
-    first: string;
-    last:string;
-    fullName:string;
-}
-
-export class Employee implements  IEmployee {
-    first: string;
-    last: string;
-
-    constructor (first:string, last:string) {
-        this.first = first;
-        this.last = last;
-    }
-
-    get fullName() {
-        return this.first + " " + this.last;
-    }
-}
+import {Employee} from './employee'
 
 
 @Component({

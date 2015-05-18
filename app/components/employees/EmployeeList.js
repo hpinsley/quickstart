@@ -10,15 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, View, For } from 'angular2/angular2';
-export class Employee {
-    constructor(first, last) {
-        this.first = first;
-        this.last = last;
-    }
-    get fullName() {
-        return this.first + " " + this.last;
-    }
-}
+import { Employee } from './employee';
 export let EmployeeList = class {
     constructor() {
         this.age = 55;
