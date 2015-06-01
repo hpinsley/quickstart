@@ -1,5 +1,5 @@
 System.config({
-  "baseURL": "/quickstart",
+  "baseURL": "/",
   "transpiler": "traceur",
   "paths": {
     "*": "*.js",

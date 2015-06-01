@@ -1,4 +1,4 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
         case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
@@ -6,23 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-import { Component, View } from 'angular2/angular2';
-import { EmployeeForm } from './EmployeeForm';
-import { EmployeeList } from './EmployeeList';
-export let EmployeePage = class {
-    constructor() {
-    }
-};
-EmployeePage = __decorate([
-    Component({
-        selector: 'employee-page'
-    }),
-    View({
-        templateUrl: 'app/components/employees/EmployeePage.html',
-        directives: [EmployeeForm, EmployeeList]
-    }), 
-    __metadata('design:paramtypes', [])
-], EmployeePage);
+define(["require", "exports", 'angular2/angular2', './EmployeeForm', './EmployeeList'], function (require, exports, angular2_1, EmployeeForm_1, EmployeeList_1) {
+    var EmployeePage = (function () {
+        function EmployeePage() {
+            this.context = {
+                selectedEmployee: null,
+                title: 'This is from the context'
+            };
+        }
+        EmployeePage.prototype.buttonClick = function () {
+            alert('button click');
+        };
+        EmployeePage = __decorate([
+            angular2_1.Component({
+                selector: 'employee-page'
+            }),
+            angular2_1.View({
+                templateUrl: 'app/components/employees/EmployeePage.html',
+                directives: [EmployeeForm_1.EmployeeForm, EmployeeList_1.EmployeeList]
+            })
+        ], EmployeePage);
+        return EmployeePage;
+    })();
+    exports.EmployeePage = EmployeePage;
+});
+//# sourceMappingURL=EmployeePage.js.map
