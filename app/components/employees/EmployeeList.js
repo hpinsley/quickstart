@@ -6,9 +6,9 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-define(["require", "exports", 'angular2/angular2', './employee'], function (require, exports, angular2_1, employee_1) {
+define(["require", "exports", 'angular2/angular2', './employee', './EmployeeForm'], function (require, exports, angular2_1, employee_1, EmployeeForm_1) {
     var EmployeeList = (function () {
-        function EmployeeList() {
+        function EmployeeList(employeeForm) {
             var _this = this;
             this.age = 55;
             console.log("Employee list has been constructed.");
@@ -30,9 +30,14 @@ define(["require", "exports", 'angular2/angular2', './employee'], function (requ
                 _this.employees[0].first = "Lauren";
             }, 2000);
         }
+        EmployeeList.prototype.employeeClick = function (emp) {
+            alert('You clicked an employee: ' + emp.fullName);
+        };
         EmployeeList = __decorate([
             angular2_1.Component({
-                selector: 'employee-list'
+                selector: 'employee-list',
+                //componentServices: [EmployeeForm]
+                appInjector: [EmployeeForm_1.EmployeeForm]
             }),
             angular2_1.View({
                 templateUrl: 'app/components/employees/EmployeeList.html',

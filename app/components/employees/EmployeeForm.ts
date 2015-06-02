@@ -5,7 +5,7 @@ import {Component, View} from 'angular2/angular2'
 //import {EmployeePage} from './EmployeePage'
 
 @Component({
-    selector: 'employee-form'
+    selector: 'employee-form'    
     //injectables: [EmployeePage]
 })
 @View({

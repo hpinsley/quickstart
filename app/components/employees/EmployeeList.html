@@ -8,7 +8,7 @@
         </tr>
     </thead>
     <tr *for="#employee of employees">
-        <td>{{employee.first}}</td>
+        <td (click)="employeeClick(employee)">{{employee.first}}</td>
         <td>{{employee.last}}</td>
         <td>{{employee.fullName}}</td>
     </tr>

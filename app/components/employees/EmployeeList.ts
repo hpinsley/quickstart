@@ -1,10 +1,12 @@
 /// <reference path="../../../typings/angular2/angular2.d.ts" />
 import {Component, View, bootstrap, For} from 'angular2/angular2'
 import {Employee} from './employee'
-
+import {EmployeeForm} from './EmployeeForm'
 
 @Component({
-    selector: 'employee-list'
+    selector: 'employee-list',
+    //componentServices: [EmployeeForm]
+    appInjector: [EmployeeForm]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
@@ -17,7 +19,7 @@ export class EmployeeList {
     public employees:Employee[];
     public age:number = 55;
 
-    constructor() {
+    constructor(employeeForm:EmployeeForm) {
         console.log("Employee list has been constructed.");
         this.employees = [
             new Employee("Howard", "Pinsley"),
@@ -37,6 +39,10 @@ export class EmployeeList {
         setTimeout(()=>{
             this.employees[0].first = "Lauren";
         }, 2000);
+    }
+    
+    employeeClick(emp:Employee) {
+        alert('You clicked an employee: ' + emp.fullName);
     }
 }
 
