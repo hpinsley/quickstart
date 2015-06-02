@@ -6,24 +6,22 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-if (typeof __param !== "function") __param = function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-define(["require", "exports", 'angular2/angular2', 'angular2/core', './EmployeePage'], function (require, exports, angular2_1, core_1, EmployeePage_1) {
+define(["require", "exports", 'angular2/angular2'], function (require, exports, angular2_1) {
+    //import {Parent} from 'angular2/core'
+    //import {Employee} from './employee'
+    //import {EmployeePage} from './EmployeePage'
     var EmployeeForm = (function () {
-        function EmployeeForm(page) {
-            console.log(page);
+        function EmployeeForm() {
+            console.log('Constructed the employee form');
         }
         EmployeeForm = __decorate([
             angular2_1.Component({
-                selector: 'employee-form',
-                injectables: [EmployeePage_1.EmployeePage]
+                selector: 'employee-form'
             }),
             angular2_1.View({
                 templateUrl: 'app/components/employees/EmployeeForm.html',
                 directives: []
-            }),
-            __param(0, core_1.Parent())
+            })
         ], EmployeeForm);
         return EmployeeForm;
     })();

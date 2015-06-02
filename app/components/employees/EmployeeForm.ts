@@ -1,12 +1,12 @@
 /// <reference path="../../../typings/angular2/angular2.d.ts" />
-import {Component, View, Core} from 'angular2/angular2'
-import {Parent} from 'angular2/core'
-import {Employee} from './employee'
-import {EmployeePage} from './EmployeePage'
+import {Component, View} from 'angular2/angular2'
+//import {Parent} from 'angular2/core'
+//import {Employee} from './employee'
+//import {EmployeePage} from './EmployeePage'
 
 @Component({
-    selector: 'employee-form',
-    injectables: [EmployeePage]
+    selector: 'employee-form'
+    //injectables: [EmployeePage]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
@@ -15,8 +15,8 @@ import {EmployeePage} from './EmployeePage'
 // Component controller
 export class EmployeeForm {
 
-    constructor(@Parent() page:EmployeePage) {
-        console.log(page);
+    constructor() {
+        console.log('Constructed the employee form');
     }
 }
 

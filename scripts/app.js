@@ -1,4 +1,4 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
         case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
@@ -6,26 +6,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-import { Component, View, bootstrap } from 'angular2/angular2';
-import { EmployeePage } from '../app/components/employees/EmployeePage';
-var age = 24;
-let MyAppComponent = class {
-    constructor() {
-        console.log("MyAppComponent has been constructed");
-        this.name = 'Howard';
-    }
-};
-MyAppComponent = __decorate([
-    Component({
-        selector: 'my-app'
-    }),
-    View({
-        templateUrl: 'scripts/app.html',
-        directives: [EmployeePage]
-    }), 
-    __metadata('design:paramtypes', [])
-], MyAppComponent);
-bootstrap(MyAppComponent);
+define(["require", "exports", 'angular2/angular2', '../app/components/employees/EmployeePage'], function (require, exports, angular2_1, EmployeePage_1) {
+    var age = 24;
+    var MyAppComponent = (function () {
+        function MyAppComponent() {
+            console.log("MyAppComponent has been constructed");
+            this.name = 'Howard';
+        }
+        MyAppComponent = __decorate([
+            angular2_1.Component({
+                selector: 'my-app'
+            }),
+            angular2_1.View({
+                templateUrl: 'scripts/app.html',
+                directives: [EmployeePage_1.EmployeePage]
+            })
+        ], MyAppComponent);
+        return MyAppComponent;
+    })();
+    angular2_1.bootstrap(MyAppComponent);
+});
+//# sourceMappingURL=app.js.map
