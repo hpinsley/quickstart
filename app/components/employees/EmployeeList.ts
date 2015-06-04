@@ -1,5 +1,6 @@
-/// <reference path="../../../typings/angular2/angular2.d.ts" />
-import {Component, View, bootstrap, For} from 'angular2/angular2'
+/// <reference path="../../../node_modules/angular2/angular2.d.ts" />
+/// <reference path="../../../app/components/employees/EmployeePage.ts" />
+import {Component, View, bootstrap} from 'node_modules/angular2/angular2'
 import {Employee} from './employee'
 import {EmployeeForm} from './EmployeeForm'
 
@@ -10,7 +11,7 @@ import {EmployeeForm} from './EmployeeForm'
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
-    directives: [For]
+    directives: [/* For */]
 })
 
 // Component controller

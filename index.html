@@ -4,19 +4,31 @@
 
     <script src="jspm_packages/github/jmcriffey/bower-traceur-runtime@0.0.88/traceur-runtime.js"></script>
     <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-    <script src="libs/2.0.0-alpha.23/angular2.dev.js"></script>
-
+<!--    <script src="config.js"></script>-->
+<!--    <script src="libs/2.0.0-alpha.23/angular2.dev.js"></script>-->
+<!--    <script src="bower_components/require/build/require.js" data-main="./scripts/app.js"></script>-->
+    <script src="node_modules/angular2/angular2.js"></script>"
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bower_components/datatables/media/css/jquery.dataTables.css">
 </head>
 <body class="container">
-    <my-app>
-    </my-app>
-
     <script>
         System.import('./scripts/app');
     </script>
+
+    <script>
+        System.paths = {
+        //'angular2/*':'/node_modules/angular2/*.js',
+        'rtts_assert/*': '/rtts_assert/*.js',
+        'rx/*': 'node_modules/rx/*.js',
+        'pattern_search/*': '/pattern_search/*.js',
+        'index': 'index.js'
+      };
+    </script>
+
+    <my-app>
+    </my-app>
+
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>

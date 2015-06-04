@@ -1,8 +1,11 @@
-/// <reference path="../../../typings/angular2/angular2.d.ts" />
-import {Component, View} from 'angular2/angular2'
+/// <reference path="./EmployeePage.ts" />
+
+import {Component, View, bootstrap} from 'angular2/angular2'
+
+
 //import {Parent} from 'angular2/core'
-//import {Employee} from './employee'
-//import {EmployeePage} from './EmployeePage'
+import {Employee} from './employee'
+import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form'    
