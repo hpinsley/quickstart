@@ -1,6 +1,6 @@
-/// <reference path="../../../node_modules/angular2/angular2.d.ts" />
-/// <reference path="../../../app/components/employees/EmployeePage.ts" />
-import {Component, View, bootstrap} from 'node_modules/angular2/angular2'
+/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="./EmployeePage.ts" />
+import {Component, View, bootstrap} from 'angular2/angular2'
 import {Employee} from './employee'
 import {EmployeeForm} from './EmployeeForm'
 

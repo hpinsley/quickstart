@@ -6,9 +6,12 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-/// <reference path="../../../node_modules/angular2/angular2.d.ts" />
-/// <reference path="../../../app/components/employees/EmployeePage.ts" />
-var angular2_1 = require('node_modules/angular2/angular2');
+if (typeof __metadata !== "function") __metadata = function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="./EmployeePage.ts" />
+var angular2_1 = require('angular2/angular2');
 var employee_1 = require('./employee');
 var EmployeeForm_1 = require('./EmployeeForm');
 var EmployeeList = (function () {
@@ -46,8 +49,10 @@ var EmployeeList = (function () {
         angular2_1.View({
             templateUrl: 'app/components/employees/EmployeeList.html',
             directives: []
-        })
+        }), 
+        __metadata('design:paramtypes', [EmployeeForm_1.EmployeeForm])
     ], EmployeeList);
     return EmployeeList;
 })();
 exports.EmployeeList = EmployeeList;
+//# sourceMappingURL=EmployeeList.js.map

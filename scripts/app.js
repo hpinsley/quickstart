@@ -6,22 +6,28 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-import { Component, View, bootstrap } from '../node_modules/angular2/angular2';
+if (typeof __metadata !== "function") __metadata = function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/// <reference path="../typings/tsd.d.ts" />
+var angular2_1 = require('angular2/angular2');
 //import {EmployeePage} from '../app/components/employees/EmployeePage'
 var age = 24;
-let MyAppComponent = class {
-    constructor() {
+var MyAppComponent = (function () {
+    function MyAppComponent() {
         console.log("MyAppComponent has been constructed");
         this.name = 'Howard';
     }
-};
-Object.defineProperty(MyAppComponent, "name", { value: "MyAppComponent", configurable: true });
-MyAppComponent = __decorate([
-    Component({
-        selector: 'my-app'
-    }),
-    View({
-        templateUrl: 'scripts/app.html' //,
-    })
-], MyAppComponent);
-bootstrap(MyAppComponent);
+    MyAppComponent = __decorate([
+        angular2_1.Component({
+            selector: 'my-app'
+        }),
+        angular2_1.View({
+            templateUrl: 'scripts/app.html' //,
+        }), 
+        __metadata('design:paramtypes', [])
+    ], MyAppComponent);
+    return MyAppComponent;
+})();
+angular2_1.bootstrap(MyAppComponent);
+//# sourceMappingURL=app.js.map

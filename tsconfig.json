@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
         "emitDecoratorMetadata": true,
-        "module": "amd",
+        "sourceMap": true,
+        "module": "commonjs",
         "target": "es5"
     }
-//    ,
-//    "files": [
-//        "scripts/app.ts",
-//        "typings/tsd.d.ts"
-//    ]
+   ,
+   "files": [
+       "scripts/app.ts",
+       "app/components/employees/employee.ts",
+       "app/components/employees/EmployeePage.ts"
+   ]
 }

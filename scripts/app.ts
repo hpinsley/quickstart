@@ -1,4 +1,5 @@
-import {Component, View, bootstrap} from '../node_modules/angular2/angular2'
+/// <reference path="../typings/tsd.d.ts" />
+import {Component, View, bootstrap} from 'angular2/angular2'
 //import {EmployeePage} from '../app/components/employees/EmployeePage'
 var age = 24;
 

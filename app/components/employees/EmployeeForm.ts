@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/tsd.d.ts" />
 /// <reference path="./EmployeePage.ts" />
 
 import {Component, View, bootstrap} from 'angular2/angular2'
