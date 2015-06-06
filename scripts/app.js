@@ -11,7 +11,7 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 };
 /// <reference path="../typings/tsd.d.ts" />
 var angular2_1 = require('angular2/angular2');
-//import {EmployeePage} from '../app/components/employees/EmployeePage'
+var EmployeePage_1 = require('../app/components/employees/EmployeePage');
 var age = 24;
 var MyAppComponent = (function () {
     function MyAppComponent() {
@@ -23,7 +23,8 @@ var MyAppComponent = (function () {
             selector: 'my-app'
         }),
         angular2_1.View({
-            templateUrl: 'scripts/app.html' //,
+            templateUrl: 'scripts/app.html',
+            directives: [EmployeePage_1.EmployeePage]
         }), 
         __metadata('design:paramtypes', [])
     ], MyAppComponent);

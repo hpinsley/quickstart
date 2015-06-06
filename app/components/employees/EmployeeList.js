@@ -48,7 +48,7 @@ var EmployeeList = (function () {
         }),
         angular2_1.View({
             templateUrl: 'app/components/employees/EmployeeList.html',
-            directives: []
+            directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [EmployeeForm_1.EmployeeForm])
     ], EmployeeList);
