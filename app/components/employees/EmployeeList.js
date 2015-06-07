@@ -22,7 +22,7 @@ var EmployeeList = (function () {
         this.employees = [
             new employee_1.Employee("Howard", "Pinsley"),
             new employee_1.Employee("David", "Pinsley"),
-            new employee_1.Employee("Gia", "Bloss"),
+            new employee_1.Employee("Pilar", "Pinsley"),
             new employee_1.Employee("Evangeline", "Nally"),
             new employee_1.Employee("Edna", "Gagne"),
             new employee_1.Employee("Ora", "Sum"),

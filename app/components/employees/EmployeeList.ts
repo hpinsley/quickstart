@@ -25,7 +25,7 @@ export class EmployeeList {
         this.employees = [
             new Employee("Howard", "Pinsley"),
             new Employee("David", "Pinsley"),
-            new Employee("Gia","Bloss"),
+            new Employee("Pilar","Pinsley"),
             new Employee("Evangeline","Nally"),
             new Employee("Edna","Gagne"),
             new Employee("Ora","Sum"),
