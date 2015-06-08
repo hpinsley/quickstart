@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-/// <reference path="./EmployeePage.ts" />
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
 import {Employee} from './employee'
 import {EmployeeForm} from './EmployeeForm'
@@ -16,9 +14,6 @@ import {EmployeeForm} from './EmployeeForm'
 
 // Component controller
 export class EmployeeList {
-
-    public employees:Employee[];
-    public age:number = 55;
 
     constructor() {
         console.log("Employee list has been constructed.");
@@ -43,9 +38,8 @@ export class EmployeeList {
         console.log("The first employee is now " + this.employees[0].fullName);
     }
     
-    employeeClick(emp:Employee) {
+    employeeClick(emp) {
         console.log("You clicked on", emp);
         //this.employeeForm.selectEmployee(emp);
     }
 }
-

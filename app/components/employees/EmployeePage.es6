@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
 import {Component, View, bootstrap} from 'angular2/angular2'
 
 import {Employee} from './employee'
@@ -12,13 +11,8 @@ import {EmployeeList} from './EmployeeList'
     templateUrl: 'app/components/employees/EmployeePage.html',
     directives: [EmployeeForm, EmployeeList]
 })
-// Component controller
-export class EmployeePage {
 
-    context : {
-        selectedEmployee: any;
-        title:string;
-    };
+export class EmployeePage {
 
     constructor() {
         this.context = {
@@ -31,4 +25,3 @@ export class EmployeePage {
         alert('button click');
     }
 }
-

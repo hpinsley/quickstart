@@ -1,6 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-/// <reference path="./EmployeePage.ts" />
-
 import {Component, View, FormControlDirective, ControlGroup, Control, FormModelDirective} from 'angular2/angular2'
 
 
@@ -16,10 +13,6 @@ import {EmployeePage} from './EmployeePage'
 })
 // Component controller
 export class EmployeeForm {
-
-    employee: Employee;
-    empForm: ControlGroup;
-    lastNameCtl: Control;
     
     constructor() {
         console.log('Constructed the employee form');
@@ -30,7 +23,7 @@ export class EmployeeForm {
         // this.empForm.addControl('lastNameCtl', this.lastNameCtl);
     }
     
-    selectEmployee(emp:Employee) {
+    selectEmployee(emp) {
         console.log("In Employee form.  Setting current employee to " + emp.fullName);
         this.employee = emp;
     }
@@ -39,4 +32,3 @@ export class EmployeeForm {
         console.log("Employee is: " + this.employee.fullName);
     }
 }
-

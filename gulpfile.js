@@ -13,10 +13,12 @@ gulp.task('default', function() {
 	log("hello world.  Your sources are at " + config.alles6);
 });
 
-gulp.task('clean', function() {
-    
+gulp.task('clean', function(done) {
+    log('Cleaning the build folder');
+    del(config.build, done);
 });
-gulp.task('compile', function() {
+
+gulp.task('compile', ['clean'], function() {
     return gulp
         .src(config.alles6)
         .pipe($.traceur(config.traceur.options))
