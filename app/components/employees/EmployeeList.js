@@ -16,9 +16,9 @@ var employee_1 = require('./employee');
 var EmployeeForm_1 = require('./EmployeeForm');
 var EmployeeList = (function () {
     function EmployeeList(employeeForm) {
-        var _this = this;
         this.age = 55;
         console.log("Employee list has been constructed.");
+        this.employeeForm = employeeForm;
         this.employees = [
             new employee_1.Employee("Howard", "Pinsley"),
             new employee_1.Employee("David", "Pinsley"),
@@ -33,12 +33,13 @@ var EmployeeList = (function () {
             new employee_1.Employee("Adele", "Devitt"),
             new employee_1.Employee("Sharilyn", "Gerald")
         ];
-        setTimeout(function () {
-            _this.employees[0].first = "Lauren";
-        }, 2000);
     }
+    EmployeeList.prototype.changeToLauren = function () {
+        this.employees[0].first = "Lauren";
+        console.log("The first employee is now " + this.employees[0].fullName);
+    };
     EmployeeList.prototype.employeeClick = function (emp) {
-        alert('You clicked an employee: ' + emp.fullName);
+        this.employeeForm.selectEmployee(emp);
     };
     EmployeeList = __decorate([
         angular2_1.Component({

@@ -12,17 +12,29 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var employee_1 = require('./employee');
 var EmployeeForm = (function () {
     function EmployeeForm() {
         console.log('Constructed the employee form');
+        this.employee = new employee_1.Employee("dummy", "fake");
     }
+    EmployeeForm.prototype.selectEmployee = function (emp) {
+        console.log("In Employee form.  Setting current employee to " + emp.fullName);
+        this.employee = emp;
+    };
+    EmployeeForm.prototype.updateEmp = function () {
+        this.employee.last = "happy";
+        console.log('Set the last name to happy.');
+    };
     EmployeeForm = __decorate([
         angular2_1.Component({
-            selector: 'employee-form'
+            selector: 'employee-form',
+            properties: {
+                employee: 'employee'
+            }
         }),
         angular2_1.View({
-            templateUrl: 'app/components/employees/EmployeeForm.html',
-            directives: []
+            templateUrl: 'app/components/employees/EmployeeForm.html'
         }), 
         __metadata('design:paramtypes', [])
     ], EmployeeForm);

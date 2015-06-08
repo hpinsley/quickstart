@@ -12,11 +12,17 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 /// <reference path="../typings/tsd.d.ts" />
 var angular2_1 = require('angular2/angular2');
 var EmployeePage_1 = require('../app/components/employees/EmployeePage');
-var age = 24;
 var MyAppComponent = (function () {
     function MyAppComponent() {
+        var _this = this;
         console.log("MyAppComponent has been constructed");
         this.name = 'Howard';
+        this.username = new angular2_1.Control();
+        this.username.value = 'My initial';
+        setTimeout(function () {
+            _this.name = 'David';
+            console.log('Name is now ' + _this.name);
+        }, 2000);
     }
     MyAppComponent = __decorate([
         angular2_1.Component({
@@ -30,5 +36,6 @@ var MyAppComponent = (function () {
     ], MyAppComponent);
     return MyAppComponent;
 })();
+exports.MyAppComponent = MyAppComponent;
 angular2_1.bootstrap(MyAppComponent);
 //# sourceMappingURL=app.js.map

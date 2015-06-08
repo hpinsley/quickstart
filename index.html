@@ -5,6 +5,7 @@
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/angular2/node_modules/zone.js/dist/zone.js"></script>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bower_components/datatables/media/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="app/styles/flex.css">
@@ -14,51 +15,11 @@
         <script>
             System.import('./scripts/app');
         </script>
-        <!--<my-app>
-    </my-app>-->
         <div class="Grid Grid--gutters">
-            <div class="Grid-cell">This is the first grid cell</div>
-            <div class="Grid-cell">
-                <div class="Grid" style="flex-direction:column">
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell" ><span class="glyphicon glyphicon-star"></span></div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                </div>
-            </div>
-            <div class="Grid-cell">This is the thrid grid cell</div>
-            <div class="Grid-cell">
-                <h1>This is in an h1
-                    <h1>
-            </div>
-        </div>
-        <div class="Grid Grid--gutters">
-            <div class="Grid-cell">This is the first grid cell</div>
-            <div class="Grid-cell">
-                <div class="Grid">
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                    <div class="Grid-cell">Now is the time for all good men to come to the aid of their country</div>
-                </div>
-            </div>
-            <div class="Grid-cell">This is the thrid grid cell</div>
-            <div class="Grid-cell">
-                <h1>This is in an h1
-                    <h1>
-            </div>
+            <my-app></my-app>
         </div>
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
-        <script>
-            $(function(){
-                setTimeout(function(){
-                    $("table").DataTable();
-                },5000);
-            });
-        </script>
     </body>
 
 </html>

@@ -19,9 +19,13 @@ export class EmployeeList {
 
     public employees:Employee[];
     public age:number = 55;
+    employeeForm: EmployeeForm;
 
     constructor(employeeForm:EmployeeForm) {
         console.log("Employee list has been constructed.");
+        
+        this.employeeForm = employeeForm;
+        
         this.employees = [
             new Employee("Howard", "Pinsley"),
             new Employee("David", "Pinsley"),
@@ -36,14 +40,14 @@ export class EmployeeList {
             new Employee("Adele","Devitt"),
             new Employee("Sharilyn","Gerald")
         ];
-
-        setTimeout(()=>{
-            this.employees[0].first = "Lauren";
-        }, 2000);
+    }
+    changeToLauren() {
+        this.employees[0].first = "Lauren";
+        console.log("The first employee is now " + this.employees[0].fullName);
     }
     
     employeeClick(emp:Employee) {
-        alert('You clicked an employee: ' + emp.fullName);
+        this.employeeForm.selectEmployee(emp);
     }
 }
 
