@@ -17,21 +17,21 @@ var EmployeeForm = (function () {
     function EmployeeForm() {
         console.log('Constructed the employee form');
         this.employee = new employee_1.Employee("dummy", "fake");
+        // this.empForm = new ControlGroup();
+        // this.lastNameCtl = new Control();
+        // this.empForm.addControl('lastNameCtl', this.lastNameCtl);
     }
     EmployeeForm.prototype.selectEmployee = function (emp) {
         console.log("In Employee form.  Setting current employee to " + emp.fullName);
         this.employee = emp;
     };
-    EmployeeForm.prototype.updateEmp = function () {
-        this.employee.last = "happy";
-        console.log('Set the last name to happy.');
+    EmployeeForm.prototype.onUpdate = function () {
+        console.log("Employee is: " + this.employee.fullName);
     };
     EmployeeForm = __decorate([
         angular2_1.Component({
             selector: 'employee-form',
-            properties: {
-                employee: 'employee'
-            }
+            directives: [angular2_1.FormControlDirective, angular2_1.ControlGroup, angular2_1.Control]
         }),
         angular2_1.View({
             templateUrl: 'app/components/employees/EmployeeForm.html'

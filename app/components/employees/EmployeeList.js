@@ -15,10 +15,9 @@ var angular2_1 = require('angular2/angular2');
 var employee_1 = require('./employee');
 var EmployeeForm_1 = require('./EmployeeForm');
 var EmployeeList = (function () {
-    function EmployeeList(employeeForm) {
+    function EmployeeList() {
         this.age = 55;
         console.log("Employee list has been constructed.");
-        this.employeeForm = employeeForm;
         this.employees = [
             new employee_1.Employee("Howard", "Pinsley"),
             new employee_1.Employee("David", "Pinsley"),
@@ -39,19 +38,18 @@ var EmployeeList = (function () {
         console.log("The first employee is now " + this.employees[0].fullName);
     };
     EmployeeList.prototype.employeeClick = function (emp) {
-        this.employeeForm.selectEmployee(emp);
+        console.log("You clicked on", emp);
+        //this.employeeForm.selectEmployee(emp);
     };
     EmployeeList = __decorate([
         angular2_1.Component({
-            selector: 'employee-list',
-            //componentServices: [EmployeeForm]
-            appInjector: [EmployeeForm_1.EmployeeForm]
+            selector: 'employee-list'
         }),
         angular2_1.View({
             templateUrl: 'app/components/employees/EmployeeList.html',
-            directives: [angular2_1.NgFor]
+            directives: [angular2_1.NgFor, EmployeeForm_1.EmployeeForm]
         }), 
-        __metadata('design:paramtypes', [EmployeeForm_1.EmployeeForm])
+        __metadata('design:paramtypes', [])
     ], EmployeeList);
     return EmployeeList;
 })();

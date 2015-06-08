@@ -1,10 +1,6 @@
 <h2>Employee Form</h2>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Update Employee</h3>
-    </div>
-    <div class="panel-body">
-        Employee Form Emp: {{employee.last}}
-    </div>
-    <button (click)="updateEmp()">Update Employee</button>
-</div>
+<div>Current employee: {{employee.fullName}}</div>
+<!--<form [ng-form-model]='empForm'>
+    Last name: <input type='text' ng-control='lastNameCtl'>
+    <button (click)="onUpdate()">Update</button>
+</form>-->

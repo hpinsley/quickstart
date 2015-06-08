@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 /// <reference path="./EmployeePage.ts" />
 
-import {Component, View, bootstrap, ON_PUSH, CHECK_ALWAYS} from 'angular2/angular2'
+import {Component, View, FormControlDirective, ControlGroup, Control, FormModelDirective} from 'angular2/angular2'
 
 
 import {Employee} from './employee'
@@ -9,11 +9,7 @@ import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    properties: {
-        employee: 'employee'
-    }
-    //,changeDetecton:CHECK_ALWAYS    
-    //injectables: [EmployeePage]
+    directives: [FormControlDirective, ControlGroup, Control]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html'
@@ -22,20 +18,25 @@ import {EmployeePage} from './EmployeePage'
 export class EmployeeForm {
 
     employee: Employee;
+    empForm: ControlGroup;
+    lastNameCtl: Control;
     
     constructor() {
         console.log('Constructed the employee form');
         this.employee = new Employee("dummy", "fake");
+        
+        // this.empForm = new ControlGroup();
+        // this.lastNameCtl = new Control();
+        // this.empForm.addControl('lastNameCtl', this.lastNameCtl);
     }
     
     selectEmployee(emp:Employee) {
         console.log("In Employee form.  Setting current employee to " + emp.fullName);
         this.employee = emp;
     }
-    
-    updateEmp() {
-        this.employee.last = "happy";
-        console.log('Set the last name to happy.');
+        
+    onUpdate() {
+        console.log("Employee is: " + this.employee.fullName);
     }
 }
 

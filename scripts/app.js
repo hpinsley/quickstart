@@ -17,8 +17,6 @@ var MyAppComponent = (function () {
         var _this = this;
         console.log("MyAppComponent has been constructed");
         this.name = 'Howard';
-        this.username = new angular2_1.Control();
-        this.username.value = 'My initial';
         setTimeout(function () {
             _this.name = 'David';
             console.log('Name is now ' + _this.name);

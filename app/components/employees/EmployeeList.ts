@@ -5,13 +5,13 @@ import {Employee} from './employee'
 import {EmployeeForm} from './EmployeeForm'
 
 @Component({
-    selector: 'employee-list',
+    selector: 'employee-list'
     //componentServices: [EmployeeForm]
-    appInjector: [EmployeeForm]
+    //appInjector: [EmployeeForm]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
-    directives: [NgFor]
+    directives: [NgFor, EmployeeForm]
 })
 
 // Component controller
@@ -19,12 +19,9 @@ export class EmployeeList {
 
     public employees:Employee[];
     public age:number = 55;
-    employeeForm: EmployeeForm;
 
-    constructor(employeeForm:EmployeeForm) {
+    constructor() {
         console.log("Employee list has been constructed.");
-        
-        this.employeeForm = employeeForm;
         
         this.employees = [
             new Employee("Howard", "Pinsley"),
@@ -47,7 +44,8 @@ export class EmployeeList {
     }
     
     employeeClick(emp:Employee) {
-        this.employeeForm.selectEmployee(emp);
+        console.log("You clicked on", emp);
+        //this.employeeForm.selectEmployee(emp);
     }
 }
 
