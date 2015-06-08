@@ -1,6 +1,5 @@
-/// <reference path="../typings/tsd.d.ts" />
 import {Component, View, bootstrap} from 'angular2/angular2'
-import {EmployeePage} from '../app/components/employees/EmployeePage'
+import {EmployeePage} from 'components/employees/EmployeePage'
 
 @Component({
     selector: 'my-app'
@@ -9,9 +8,8 @@ import {EmployeePage} from '../app/components/employees/EmployeePage'
     templateUrl: 'scripts/app.html',
     directives: [EmployeePage]
 })
-// Component controller
+
 export class MyAppComponent {
-    name: string;
     
     constructor() {
         console.log("MyAppComponent has been constructed");
