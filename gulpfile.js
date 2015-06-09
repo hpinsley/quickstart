@@ -21,9 +21,15 @@ gulp.task('clean', function(done) {
 gulp.task('compile', ['clean'], function() {
     return gulp
         .src(config.alles6)
+        .pipe($.if(args.verbose, $.print()))
+        .pipe($.plumber()) // exit gracefully if something fails after this
         .pipe($.traceur(config.traceur.options))
         .pipe($.rename({extname:".js"}))
         .pipe(gulp.dest(config.build));    
+});
+
+gulp.task('watch-code', function() {
+    gulp.watch([config.alles6], ['compile']);    
 });
 
 //gulp.task('help', $.taskListing);

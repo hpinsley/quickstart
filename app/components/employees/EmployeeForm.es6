@@ -1,4 +1,4 @@
-import {Component, View, FormControlDirective, ControlGroup, Control, FormModelDirective} from 'angular2/angular2'
+import {ComponentAnnotation as Component, ViewAnnotation as View, FormControlDirective, ControlGroup, Control, FormModelDirective} from 'angular2/angular2'
 
 
 import {Employee} from './employee'

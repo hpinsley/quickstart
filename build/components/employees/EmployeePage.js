@@ -4,8 +4,8 @@ var $__angular2_47_angular2__,
     $__EmployeeForm__,
     $__EmployeeList__;
 var $__0 = ($__angular2_47_angular2__ = require("angular2/angular2"), $__angular2_47_angular2__ && $__angular2_47_angular2__.__esModule && $__angular2_47_angular2__ || {default: $__angular2_47_angular2__}),
-    Component = $__0.Component,
-    View = $__0.View,
+    Component = $__0.ComponentAnnotation,
+    View = $__0.ViewAnnotation,
     bootstrap = $__0.bootstrap;
 var Employee = ($__employee__ = require("./employee"), $__employee__ && $__employee__.__esModule && $__employee__ || {default: $__employee__}).Employee;
 var EmployeeForm = ($__EmployeeForm__ = require("./EmployeeForm"), $__EmployeeForm__ && $__EmployeeForm__.__esModule && $__EmployeeForm__ || {default: $__EmployeeForm__}).EmployeeForm;
