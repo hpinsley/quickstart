@@ -1,12 +1,13 @@
-import {ComponentAnnotation as Component, ViewAnnotation as View, FormControlDirective, ControlGroup, Control, FormModelDirective} from 'angular2/angular2'
-
+import {InjectAnnotation as Inject, ComponentAnnotation as Component, ViewAnnotation as View, FormControlDirective, Control, FormModelDirective} from 'angular2/angular2'
+import {FormBuilder, Validators, formDirectives, ControlGroup} from 'angular2/forms';
 
 import {Employee} from './employee'
 import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    directives: [FormControlDirective, ControlGroup, Control]
+    directives: [formDirectives],
+    appInjector: [FormBuilder]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html'
@@ -14,13 +15,19 @@ import {EmployeePage} from './EmployeePage'
 // Component controller
 export class EmployeeForm {
     
-    constructor() {
+    constructor(@Inject(FormBuilder) builder) {
         console.log('Constructed the employee form');
         this.employee = new Employee("dummy", "fake");
-        
-        // this.empForm = new ControlGroup();
-        // this.lastNameCtl = new Control();
-        // this.empForm.addControl('lastNameCtl', this.lastNameCtl);
+ 
+        this.loginForm = builder.group({
+            login: ["", Validators.required],
+ 
+        passwordRetry: builder.group({
+          password: ["", Validators.required],
+          passwordConfirmation: ["", Validators.required]
+        })
+      }); 
+
     }
     
     selectEmployee(emp) {
@@ -30,5 +37,6 @@ export class EmployeeForm {
         
     onUpdate() {
         console.log("Employee is: " + this.employee.fullName);
+        this.lastNameCtl.updateValue("hello there!");
     }
 }

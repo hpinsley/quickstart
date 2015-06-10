@@ -1,6 +1,9 @@
 <h2>Employee Form</h2>
 <div>Current employee: {{employee.fullName}}</div>
-<!--<form [ng-form-model]='empForm'>
-    Last name: <input type='text' ng-control='lastNameCtl'>
-    <button (click)="onUpdate()">Update</button>
-</form>-->
+<form [control-group]="loginForm">Login
+    <input control="login">
+    <div control-group="passwordRetry">Password
+        <input type="password" control="password">Confirm password
+        <input type="password" control="passwordConfirmation">
+    </div>
+</form>
