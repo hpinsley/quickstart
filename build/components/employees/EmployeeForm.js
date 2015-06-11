@@ -49,9 +49,11 @@ var EmployeeForm = (function() {
 Object.defineProperty(EmployeeForm, "annotations", {get: function() {
     return [new Component({
       selector: 'employee-form',
-      directives: [formDirectives],
       appInjector: [FormBuilder]
-    }), new View({templateUrl: 'app/components/employees/EmployeeForm.html'})];
+    }), new View({
+      templateUrl: 'app/components/employees/EmployeeForm.html',
+      directives: [formDirectives]
+    })];
   }});
 Object.defineProperty(EmployeeForm, "parameters", {get: function() {
     return [[new Inject(FormBuilder)]];

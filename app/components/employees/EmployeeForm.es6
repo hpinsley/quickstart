@@ -6,11 +6,11 @@ import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    directives: [formDirectives],
     appInjector: [FormBuilder]
 })
 @View({
-    templateUrl: 'app/components/employees/EmployeeForm.html'
+    templateUrl: 'app/components/employees/EmployeeForm.html',
+    directives: [formDirectives]
 })
 
 export class EmployeeForm {

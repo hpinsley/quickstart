@@ -1,6 +1,6 @@
 <h2>Employee Form</h2>
 <div>Current employee: {{employee.fullName}}</div>
-<form [control-group]="loginForm">
+<form [form-model]="loginForm">
     Login
     <input type="text" control="login">
     <div>
