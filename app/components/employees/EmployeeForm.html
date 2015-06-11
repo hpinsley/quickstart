@@ -1,9 +1,19 @@
 <h2>Employee Form</h2>
 <div>Current employee: {{employee.fullName}}</div>
-<form [control-group]="loginForm">Login
-    <input control="login">
-    <div control-group="passwordRetry">Password
-        <input type="password" control="password">Confirm password
-        <input type="password" control="passwordConfirmation">
+<form [control-group]="loginForm">
+    Login
+    <input type="text" control="login">
+    <div>
+        Last name: <input type="text" control="lastName">
     </div>
+    <div control-group="passwordRetry">
+        Password
+        <input type="text" control="password">Confirm password
+        <input type="text" control="passwordConfirmation">
+    </div>
+    <div>
+        <button (click)="submitForm()">Submit</button>
+    </div>
+    
 </form>
+<button (click)="updateLastName()">Update Last Name</button>

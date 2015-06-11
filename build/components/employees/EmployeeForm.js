@@ -23,20 +23,26 @@ var EmployeeForm = (function() {
     this.employee = new Employee("dummy", "fake");
     this.loginForm = builder.group({
       login: ["", Validators.required],
+      lastName: ["", Validators.required],
       passwordRetry: builder.group({
         password: ["", Validators.required],
         passwordConfirmation: ["", Validators.required]
       })
     });
+    this.loginForm.controls.lastName.registerOnChange((function(val) {
+      alert("onChange was invoked for last name with value: " + val);
+    }));
   }
   return ($traceurRuntime.createClass)(EmployeeForm, {
+    submitForm: function() {
+      alert("Last name on form is: " + this.loginForm.controls.lastName.value);
+    },
     selectEmployee: function(emp) {
       console.log("In Employee form.  Setting current employee to " + emp.fullName);
       this.employee = emp;
     },
-    onUpdate: function() {
-      console.log("Employee is: " + this.employee.fullName);
-      this.lastNameCtl.updateValue("hello there!");
+    updateLastName: function() {
+      this.loginForm.controls.lastName.updateValue('Jones');
     }
   }, {});
 }());

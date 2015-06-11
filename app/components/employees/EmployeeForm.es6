@@ -12,7 +12,7 @@ import {EmployeePage} from './EmployeePage'
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html'
 })
-// Component controller
+
 export class EmployeeForm {
     
     constructor(@Inject(FormBuilder) builder) {
@@ -21,6 +21,7 @@ export class EmployeeForm {
  
         this.loginForm = builder.group({
             login: ["", Validators.required],
+            lastName: ["", Validators.required],
  
         passwordRetry: builder.group({
           password: ["", Validators.required],
@@ -28,15 +29,20 @@ export class EmployeeForm {
         })
       }); 
 
+      this.loginForm.controls.lastName.registerOnChange(val => {
+        alert("onChange was invoked for last name with value: " + val);
+      });
     }
     
+    submitForm() {
+        alert("Last name on form is: " + this.loginForm.controls.lastName.value);
+    }
     selectEmployee(emp) {
         console.log("In Employee form.  Setting current employee to " + emp.fullName);
         this.employee = emp;
     }
         
-    onUpdate() {
-        console.log("Employee is: " + this.employee.fullName);
-        this.lastNameCtl.updateValue("hello there!");
+    updateLastName() {
+        this.loginForm.controls.lastName.updateValue('Jones');
     }
 }
