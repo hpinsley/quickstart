@@ -16,19 +16,17 @@ import {EmployeePage} from './EmployeePage'
 export class EmployeeForm {
     
     constructor(@Inject(FormBuilder) builder) {
+
         console.log('Constructed the employee form');
         this.employee = new Employee("dummy", "fake");
  
         this.loginForm = builder.group({
-            login: ["", Validators.required],
-            lastName: ["", Validators.required],
- 
-        passwordRetry: builder.group({
-          password: ["", Validators.required],
-          passwordConfirmation: ["", Validators.required]
-        })
+            firstName: ["", Validators.required],
+            lastName: ["", Validators.required]
       }); 
 
+      //this.loginForm.controls.firstName.updateValue('Howard');
+      
       this.loginForm.controls.lastName.registerOnChange(val => {
         alert("onChange was invoked for last name with value: " + val);
       });

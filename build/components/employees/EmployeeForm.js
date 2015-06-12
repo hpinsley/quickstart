@@ -22,12 +22,8 @@ var EmployeeForm = (function() {
     console.log('Constructed the employee form');
     this.employee = new Employee("dummy", "fake");
     this.loginForm = builder.group({
-      login: ["", Validators.required],
-      lastName: ["", Validators.required],
-      passwordRetry: builder.group({
-        password: ["", Validators.required],
-        passwordConfirmation: ["", Validators.required]
-      })
+      firstName: ["", Validators.required],
+      lastName: ["", Validators.required]
     });
     this.loginForm.controls.lastName.registerOnChange((function(val) {
       alert("onChange was invoked for last name with value: " + val);

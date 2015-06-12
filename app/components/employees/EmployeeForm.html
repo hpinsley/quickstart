@@ -1,19 +1,18 @@
 <h2>Employee Form</h2>
-<div>Current employee: {{employee.fullName}}</div>
-<form [form-model]="loginForm">
-    Login
-    <input type="text" control="login">
-    <div>
-        Last name: <input type="text" control="lastName">
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div>Current employee: {{employee.fullName}}</div>
+        <form class="form" [ng-form-model]="loginForm">
+            <div class="form-group">Last name:
+                <input class="form-control" type="text" ng-control="lastName">
+            </div>
+            <div class="form-group">First Name:
+                <input class="form-control" type="text" ng-control="firstName">
+            </div>
+            <div>
+                <button class="btn btn-primary" (click)="submitForm() ">Submit</button>
+            </div>
+        </form>
+        <button (click)="updateLastName() ">Update Last Name</button>
     </div>
-    <div control-group="passwordRetry">
-        Password
-        <input type="text" control="password">Confirm password
-        <input type="text" control="passwordConfirmation">
-    </div>
-    <div>
-        <button (click)="submitForm()">Submit</button>
-    </div>
-    
-</form>
-<button (click)="updateLastName()">Update Last Name</button>
+</div>
