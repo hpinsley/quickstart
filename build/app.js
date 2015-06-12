@@ -8,13 +8,7 @@ var $__0 = ($__angular2_47_angular2__ = require("angular2/angular2"), $__angular
 var EmployeePage = ($__components_47_employees_47_EmployeePage__ = require("./components/employees/EmployeePage"), $__components_47_employees_47_EmployeePage__ && $__components_47_employees_47_EmployeePage__.__esModule && $__components_47_employees_47_EmployeePage__ || {default: $__components_47_employees_47_EmployeePage__}).EmployeePage;
 var MyAppComponent = (function() {
   function MyAppComponent() {
-    var $__2 = this;
     console.log("MyAppComponent has been constructed");
-    this.name = 'Howard';
-    setTimeout((function() {
-      $__2.name = 'David';
-      console.log('Name is now ' + $__2.name);
-    }), 2000);
   }
   return ($traceurRuntime.createClass)(MyAppComponent, {}, {});
 }());

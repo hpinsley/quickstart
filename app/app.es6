@@ -13,12 +13,6 @@ export class MyAppComponent {
     
     constructor() {
         console.log("MyAppComponent has been constructed");
-        this.name = 'Howard';
-        
-        setTimeout(() => {
-            this.name = 'David';
-            console.log('Name is now ' + this.name);
-        }, 2000);
     }
 }
 

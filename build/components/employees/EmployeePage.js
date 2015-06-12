@@ -11,15 +11,8 @@ var Employee = ($__employee__ = require("./employee"), $__employee__ && $__emplo
 var EmployeeForm = ($__EmployeeForm__ = require("./EmployeeForm"), $__EmployeeForm__ && $__EmployeeForm__.__esModule && $__EmployeeForm__ || {default: $__EmployeeForm__}).EmployeeForm;
 var EmployeeList = ($__EmployeeList__ = require("./EmployeeList"), $__EmployeeList__ && $__EmployeeList__.__esModule && $__EmployeeList__ || {default: $__EmployeeList__}).EmployeeList;
 var EmployeePage = (function() {
-  function EmployeePage() {
-    this.context = {
-      selectedEmployee: null,
-      title: 'This is from the context'
-    };
-  }
-  return ($traceurRuntime.createClass)(EmployeePage, {buttonClick: function() {
-      alert('button click');
-    }}, {});
+  function EmployeePage() {}
+  return ($traceurRuntime.createClass)(EmployeePage, {}, {});
 }());
 Object.defineProperty(EmployeePage, "annotations", {get: function() {
     return [new Component({selector: 'employee-page'}), new View({

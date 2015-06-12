@@ -15,13 +15,5 @@ import {EmployeeList} from './EmployeeList'
 export class EmployeePage {
 
     constructor() {
-        this.context = {
-            selectedEmployee: null,
-            title: 'This is from the context'
-        }
-    }
-
-    buttonClick() {
-        alert('button click');
     }
 }
