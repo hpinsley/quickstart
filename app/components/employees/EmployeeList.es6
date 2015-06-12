@@ -1,15 +1,12 @@
 import {ComponentAnnotation as Component, ViewAnnotation as View, bootstrap, NgFor} from 'angular2/angular2'
 import {Employee} from './employee'
-import {EmployeeForm} from './EmployeeForm'
 
 @Component({
     selector: 'employee-list'
-    //componentServices: [EmployeeForm]
-    //appInjector: [EmployeeForm]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
-    directives: [NgFor, EmployeeForm]
+    directives: [NgFor]
 })
 
 // Component controller
@@ -33,6 +30,11 @@ export class EmployeeList {
             new Employee("Sharilyn","Gerald")
         ];
     }
+    
+    addEmployee(emp) {
+        this.employees.push(emp);
+    }
+    
     changeToLauren() {
         this.employees[0].first = "Lauren";
         console.log("The first employee is now " + this.employees[0].fullName);

@@ -2,8 +2,10 @@
 var $__angular2_47_angular2__,
     $__angular2_47_forms__,
     $__employee__,
-    $__EmployeePage__;
+    $__EmployeePage__,
+    $__EmployeeList__;
 var $__0 = ($__angular2_47_angular2__ = require("angular2/angular2"), $__angular2_47_angular2__ && $__angular2_47_angular2__.__esModule && $__angular2_47_angular2__ || {default: $__angular2_47_angular2__}),
+    Parent = $__0.ParentAnnotation,
     Inject = $__0.InjectAnnotation,
     Component = $__0.ComponentAnnotation,
     View = $__0.ViewAnnotation,
@@ -17,10 +19,9 @@ var $__1 = ($__angular2_47_forms__ = require("angular2/forms"), $__angular2_47_f
     ControlGroup = $__1.ControlGroup;
 var Employee = ($__employee__ = require("./employee"), $__employee__ && $__employee__.__esModule && $__employee__ || {default: $__employee__}).Employee;
 var EmployeePage = ($__EmployeePage__ = require("./EmployeePage"), $__EmployeePage__ && $__EmployeePage__.__esModule && $__EmployeePage__ || {default: $__EmployeePage__}).EmployeePage;
+var EmployeeList = ($__EmployeeList__ = require("./EmployeeList"), $__EmployeeList__ && $__EmployeeList__.__esModule && $__EmployeeList__ || {default: $__EmployeeList__}).EmployeeList;
 var EmployeeForm = (function() {
   function EmployeeForm(builder) {
-    console.log('Constructed the employee form');
-    this.employee = new Employee("dummy", "fake");
     this.loginForm = builder.group({
       firstName: ["", Validators.required],
       lastName: ["", Validators.required]
@@ -29,23 +30,16 @@ var EmployeeForm = (function() {
       alert("onChange was invoked for last name with value: " + val);
     }));
   }
-  return ($traceurRuntime.createClass)(EmployeeForm, {
-    submitForm: function() {
-      alert("Last name on form is: " + this.loginForm.controls.lastName.value);
-    },
-    selectEmployee: function(emp) {
-      console.log("In Employee form.  Setting current employee to " + emp.fullName);
-      this.employee = emp;
-    },
-    updateLastName: function() {
-      this.loginForm.controls.lastName.updateValue('Jones');
-    }
-  }, {});
+  return ($traceurRuntime.createClass)(EmployeeForm, {addEmployee: function() {
+      if (!this.loginForm.valid) {
+        alert('Please specify all the input fields.');
+      }
+    }}, {});
 }());
 Object.defineProperty(EmployeeForm, "annotations", {get: function() {
     return [new Component({
       selector: 'employee-form',
-      appInjector: [FormBuilder]
+      appInjector: [FormBuilder, EmployeeList]
     }), new View({
       templateUrl: 'app/components/employees/EmployeeForm.html',
       directives: [formDirectives]
