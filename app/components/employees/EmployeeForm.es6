@@ -16,8 +16,8 @@ import {EmployeeList} from './EmployeeList'
 
 export class EmployeeForm {
     
-    constructor(@Inject(FormBuilder) builder) {
-        //this.employeeList = empList; 
+    constructor(@Inject(FormBuilder) builder, @Inject(EmployeeList) empList) {
+        this.employeeList = empList; 
         this.loginForm = builder.group({
             firstName: ["", Validators.required],
             lastName: ["", Validators.required]
@@ -32,12 +32,10 @@ export class EmployeeForm {
         if (!this.loginForm.valid) {
             alert('Please specify all the input fields.');
         }
-        /*
         else {
             var newEmployee = new Employee(this.loginForm.controls.firstName.value,
                                            this.loginForm.controls.lastName.value);
             this.employeeList.addEmployee(newEmployee);
         }
-        */
     }    
 }

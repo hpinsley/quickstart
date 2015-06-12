@@ -21,7 +21,8 @@ var Employee = ($__employee__ = require("./employee"), $__employee__ && $__emplo
 var EmployeePage = ($__EmployeePage__ = require("./EmployeePage"), $__EmployeePage__ && $__EmployeePage__.__esModule && $__EmployeePage__ || {default: $__EmployeePage__}).EmployeePage;
 var EmployeeList = ($__EmployeeList__ = require("./EmployeeList"), $__EmployeeList__ && $__EmployeeList__.__esModule && $__EmployeeList__ || {default: $__EmployeeList__}).EmployeeList;
 var EmployeeForm = (function() {
-  function EmployeeForm(builder) {
+  function EmployeeForm(builder, empList) {
+    this.employeeList = empList;
     this.loginForm = builder.group({
       firstName: ["", Validators.required],
       lastName: ["", Validators.required]
@@ -33,6 +34,9 @@ var EmployeeForm = (function() {
   return ($traceurRuntime.createClass)(EmployeeForm, {addEmployee: function() {
       if (!this.loginForm.valid) {
         alert('Please specify all the input fields.');
+      } else {
+        var newEmployee = new Employee(this.loginForm.controls.firstName.value, this.loginForm.controls.lastName.value);
+        this.employeeList.addEmployee(newEmployee);
       }
     }}, {});
 }());
@@ -46,7 +50,7 @@ Object.defineProperty(EmployeeForm, "annotations", {get: function() {
     })];
   }});
 Object.defineProperty(EmployeeForm, "parameters", {get: function() {
-    return [[new Inject(FormBuilder)]];
+    return [[new Inject(FormBuilder)], [new Inject(EmployeeList)]];
   }});
 Object.defineProperties(module.exports, {
   EmployeeForm: {get: function() {
