@@ -10,7 +10,7 @@
 .Grid-cell {
   flex: 1;
   border: 1px solid yellow;
-  background-color: tan; }
+  background-color: lightgray; }
 
 .Grid--flexCells > .Grid-cell {
   display: flex; }
