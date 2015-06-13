@@ -21,7 +21,10 @@ module.exports = function() {
                 annotations: true
                 //sourceMaps: true
             }
-        }
+        },
+        
+        index: 'index.html',
+        styles: client + '**/*.scss'
 
     };
 
