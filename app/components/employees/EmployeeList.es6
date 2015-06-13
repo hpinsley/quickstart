@@ -1,4 +1,5 @@
 import {ComponentAnnotation as Component, ViewAnnotation as View, bootstrap, NgFor} from 'angular2/angular2'
+import {List, ListWrapper} from 'angular2/src/facade/collection';
 import {Employee} from './employee'
 
 @Component({
@@ -13,13 +14,14 @@ import {Employee} from './employee'
 export class EmployeeList {
 
     constructor() {
-        console.log("Employee list has been constructed.");
         
+        //this.empList = new List();
+        //ListWrapper.push(this.empList, new Employee("Evangeline","Nally"));
+         
         this.employees = [
             new Employee("Howard", "Pinsley"),
             new Employee("David", "Pinsley"),
             new Employee("Pilar","Pinsley"),
-            new Employee("Evangeline","Nally"),
             new Employee("Edna","Gagne"),
             new Employee("Ora","Sum"),
             new Employee("Fawn","Milo"),
@@ -32,7 +34,9 @@ export class EmployeeList {
     }
     
     addEmployee(emp) {
-        this.employees.push(emp);
+        this.employees.unshift(emp);
+        //ListWrapper.push(this.employees, emp);
+        //ListWrapper.push(this.empList, emp);
     }
     
     changeToLauren() {

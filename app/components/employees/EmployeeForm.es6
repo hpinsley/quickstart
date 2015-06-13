@@ -16,7 +16,7 @@ import {EmployeeList} from './EmployeeList'
 
 export class EmployeeForm {
     
-    constructor(@Inject(FormBuilder) builder, @Inject(EmployeeList) empList) {
+    constructor(@Inject(FormBuilder) builder, @Parent() @Inject(EmployeeList) empList) {
         this.employeeList = empList; 
         this.loginForm = builder.group({
             firstName: ["", Validators.required],
