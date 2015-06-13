@@ -4,3 +4,6 @@ node_modules/
 .idea/
 .DS_Store
 build/
+.gulp-scss-cache/
+.idea/
+.sass-cache/
