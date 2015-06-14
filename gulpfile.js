@@ -37,7 +37,7 @@ gulp.task('compile', ['clean','styles'], function() {
 });
 
 gulp.task('watch-code', function() {
-    gulp.watch([config.alles6], ['compile']);    
+    gulp.watch([config.alles6, config.styles], ['compile']);    
 });
 
 //gulp.task('help', $.taskListing);

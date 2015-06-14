@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tr *ng-for="#employee of employees">
-                <td (click)="employeeClick(employee)">{{employee.first}}</td>
+                <td><a href="#" (click)="employeeClick(employee)">{{employee.first}}</a></td>
                 <td>{{employee.last}}</td>
                 <td>{{employee.fullName}}</td>
                 <td><a href="#" (click)='deleteEmployee(employee)'>X</a></td>
