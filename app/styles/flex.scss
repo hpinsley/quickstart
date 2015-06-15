@@ -1,4 +1,4 @@
-$backgroundColor: white;
+$backgroundColor: tan;
 $gcBorderColor: red;
 .Grid {
   display: flex;
@@ -11,7 +11,8 @@ $gcBorderColor: red;
 
 .Grid-cell {
   flex: 1;
-  border: 1px solid $gcBorderColor;
+  //border: 1px solid $gcBorderColor;
+  padding: 5px;
   background-color: $backgroundColor; }
 
 .Grid--flexCells > .Grid-cell {
