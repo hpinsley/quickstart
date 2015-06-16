@@ -1,12 +1,13 @@
 import {ComponentAnnotation as Component, ViewAnnotation as View, bootstrap, NgFor} from 'angular2/angular2'
 import {Employee} from './employee'
+import {AutoTable} from '../directives/AutoTable'
 
 @Component({
     selector: 'employee-list'
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
-    directives: [NgFor]
+    directives: [NgFor, AutoTable]
 })
 
 // Component controller
