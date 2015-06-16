@@ -14,7 +14,9 @@ import {AutoTable} from '../directives/AutoTable'
 export class EmployeeList {
 
     constructor() {
-                 
+        
+        this.dataTableApplied = false;
+        
         this.employees = [
             new Employee("Howard", "Pinsley"),
             new Employee("David", "Pinsley"),
@@ -47,5 +49,17 @@ export class EmployeeList {
     employeeClick(emp) {
         console.log("You clicked on", emp);
         //this.employeeForm.selectEmployee(emp);
+    }
+    
+    onLoad(event) {
+        console.log('tabled loaded', event);
+    }
+
+    onMouseEnter(event) {
+        console.log('tabled MouseEnter', event);
+        if (!this.dataTableApplied) {
+            this.dataTableApplied = true;
+            $(event.target).dataTable();
+        }
     }
 }

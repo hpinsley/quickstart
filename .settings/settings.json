@@ -3,7 +3,7 @@
 	"javascript.validate.target": "ES5",
 		"search.excludeFolders": [
 		".git",
-		"node_modules",
+		//"node_modules",
 		"bower_components"
 	]
 }

@@ -4,7 +4,8 @@
     </div>
     <div class="grid-cell">
         <h2>Employee List</h2>
-        <table auto-table class="table table-striped table-bordered">
+        Search: <input type="text" auto-table />
+        <table (load)="onLoad($event)" (mouseenter)="onMouseEnter($event)" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>First</th>
