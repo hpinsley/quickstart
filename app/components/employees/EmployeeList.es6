@@ -15,6 +15,7 @@ export class EmployeeList {
 
     constructor() {
         
+        this.empFilterText = '';
         this.dataTableApplied = false;
         
         this.employees = [
@@ -50,16 +51,23 @@ export class EmployeeList {
         console.log("You clicked on", emp);
         //this.employeeForm.selectEmployee(emp);
     }
-    
-    onLoad(event) {
-        console.log('tabled loaded', event);
-    }
 
-    onMouseEnter(event) {
-        console.log('tabled MouseEnter', event);
-        if (!this.dataTableApplied) {
-            this.dataTableApplied = true;
-            $(event.target).dataTable();
+    getEmployees() {
+        //console.log('getEmployees invoked.  Filter is ' + this.empFilterText);
+        if (!this.empFilterText) {       
+            return this.employees;
         }
+        return this.employees.filter((emp)=>emp.fullName.toLowerCase().indexOf(this.empFilterText.toLowerCase()) >= 0);
+    }
+    
+    empFilter(emp) {
+        console.log('empFilter invoked with ', emp);
+        return true;
+    }
+        
+    onSearchChanged(event) {
+        var value = event.target.value;
+        //console.log(value);
+        this.empFilterText = value;
     }
 }

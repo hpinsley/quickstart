@@ -4,8 +4,8 @@
     </div>
     <div class="grid-cell">
         <h2>Employee List</h2>
-        Search: <input type="text" auto-table />
-        <table (load)="onLoad($event)" (mouseenter)="onMouseEnter($event)" class="table table-striped table-bordered">
+        Search: <input type="text" (keyup)='onSearchChanged($event)'/>
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>First</th>
@@ -14,7 +14,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tr *ng-for="#employee of employees">
+            <tr *ng-for="#employee of getEmployees()">
                 <td><a href="#" (click)="employeeClick(employee)">{{employee.first}}</a></td>
                 <td>{{employee.last}}</td>
                 <td>{{employee.fullName}}</td>
