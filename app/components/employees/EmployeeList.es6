@@ -59,15 +59,8 @@ export class EmployeeList {
         }
         return this.employees.filter((emp)=>emp.fullName.toLowerCase().indexOf(this.empFilterText.toLowerCase()) >= 0);
     }
-    
-    empFilter(emp) {
-        console.log('empFilter invoked with ', emp);
-        return true;
-    }
-        
+            
     onSearchChanged(event) {
-        var value = event.target.value;
-        //console.log(value);
-        this.empFilterText = value;
+        this.empFilterText = event.target.value;
     }
 }
