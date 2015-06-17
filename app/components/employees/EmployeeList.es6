@@ -1,9 +1,10 @@
-import {ComponentAnnotation as Component, ViewAnnotation as View, bootstrap, NgFor} from 'angular2/angular2'
+import {Observable, EventEmitter, ComponentAnnotation as Component, ViewAnnotation as View, bootstrap, NgFor} from 'angular2/angular2'
 import {Employee} from './employee'
 import {AutoTable} from '../directives/AutoTable'
 
 @Component({
-    selector: 'employee-list'
+    selector: 'employee-list',
+    events: ['select']
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
@@ -15,8 +16,9 @@ export class EmployeeList {
 
     constructor() {
         
+        this.select = new EventEmitter();
+        
         this.empFilterText = '';
-        this.dataTableApplied = false;
         
         this.employees = [
             new Employee("Howard", "Pinsley"),
@@ -29,6 +31,19 @@ export class EmployeeList {
             new Employee("Margorie","Paradise"),
             new Employee("Genaro","Sheehan"),
             new Employee("Adele","Devitt"),
+            new Employee("Steven","Paradise"),
+            new Employee("Mark","Sheehan"),
+            new Employee("Randy","Devitt"),
+            new Employee("Steven","Schmier"),
+            new Employee("Mark","Finkelstein"),
+            new Employee("Randy","Todd"),
+            new Employee("Edna","Smith"),
+            new Employee("Ora","Jones"),
+            new Employee("Fawn","Bernstein"),
+            new Employee("Ji","Chin"),
+            new Employee("Genaro","Jones"),
+            new Employee("Adele","Brown"),
+            new Employee("Steven","Smith"),
             new Employee("Sharilyn","Gerald")
         ];
     }
@@ -49,7 +64,7 @@ export class EmployeeList {
     
     employeeClick(emp) {
         console.log("You clicked on", emp);
-        //this.employeeForm.selectEmployee(emp);
+        this.select.next(emp);
     }
 
     getEmployees() {

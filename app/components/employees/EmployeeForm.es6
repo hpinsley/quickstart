@@ -37,5 +37,9 @@ export class EmployeeForm {
                                            this.loginForm.controls.lastName.value);
             this.employeeList.addEmployee(newEmployee);
         }
+    }
+    
+    selectEmployee(emp) {
+        console.log('selected ', emp);
     }    
 }
