@@ -34,10 +34,9 @@ export class EmployeeForm {
       this.selectedEmployee = null;
       
       var subscription = this.employeeList.select._subject._subscribe({
-        onNext: function(emp) {
-                self.selectEmployee(emp);
-                }
+        onNext: self.selectEmployee.bind(self)
       });
+      
       console.log('Subscription return value', subscription);
     }
     
