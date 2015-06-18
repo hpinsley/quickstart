@@ -1,5 +1,5 @@
 <div>
-	<employee-list (select)="empform.selectEmployee($event)">
-		<employee-form #empform></employee-form>
+	<employee-list #emplist>
+		<employee-form #empform (emplist.select)="selectEmployee($event)"></employee-form>
 	</employee-list>
 </div>

@@ -1,4 +1,4 @@
-import {ParentAnnotation as Parent, InjectAnnotation as Inject, ComponentAnnotation as Component, ViewAnnotation as View, FormControlDirective, Control, FormModelDirective} from 'angular2/angular2'
+import {Observable, ParentAnnotation as Parent, InjectAnnotation as Inject, ComponentAnnotation as Component, ViewAnnotation as View, FormControlDirective, Control, FormModelDirective} from 'angular2/angular2'
 import {FormBuilder, Validators, formDirectives, ControlGroup} from 'angular2/forms';
 
 import {Employee} from './employee'
@@ -26,6 +26,13 @@ export class EmployeeForm {
       this.loginForm.controls.lastName.registerOnChange(val => {
         alert("onChange was invoked for last name with value: " + val);
       });
+      
+      var subscription = this.employeeList.select._subject._subscribe({
+        onNext: function(val) {
+                console.log('Received next of ', val);
+                }
+      });
+      console.log('Subscription return value', subscription);
     }
     
     addEmployee() {
@@ -40,6 +47,6 @@ export class EmployeeForm {
     }
     
     selectEmployee(emp) {
-        console.log('selected ', emp);
+        console.log('selected (in EmployeeForm)', emp);
     }    
 }
