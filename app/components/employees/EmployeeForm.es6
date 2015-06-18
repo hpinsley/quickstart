@@ -16,7 +16,11 @@ import {EmployeeList} from './EmployeeList'
 
 export class EmployeeForm {
     
+    
     constructor(@Inject(FormBuilder) builder, @Parent() @Inject(EmployeeList) empList) {
+    
+        var self = this;
+        
         this.employeeList = empList; 
         this.loginForm = builder.group({
             firstName: ["", Validators.required],
@@ -27,9 +31,11 @@ export class EmployeeForm {
         alert("onChange was invoked for last name with value: " + val);
       });
       
+      this.selectedEmployee = null;
+      
       var subscription = this.employeeList.select._subject._subscribe({
-        onNext: function(val) {
-                console.log('Received next of ', val);
+        onNext: function(emp) {
+                self.selectEmployee(emp);
                 }
       });
       console.log('Subscription return value', subscription);
@@ -46,7 +52,29 @@ export class EmployeeForm {
         }
     }
     
+    updateEmployee() {
+        if (!this.loginForm.valid) {
+            alert('Please specify all the input fields.');
+        }
+        else if (!this.selectedEmployee) {
+            alert('No employee selected');
+        }
+        else {
+            this.selectedEmployee.first = this.loginForm.controls.firstName.value;
+            this.selectedEmployee.last = this.loginForm.controls.lastName.value;
+        }
+    }
+
+    clearSelectedEmployee() {
+        this.selectedEmployee = null;
+        this.loginForm.controls.firstName.updateValue('');
+        this.loginForm.controls.lastName.updateValue('');
+    }
+    
     selectEmployee(emp) {
         console.log('selected (in EmployeeForm)', emp);
+        this.selectedEmployee = emp;
+        this.loginForm.controls.firstName.updateValue(emp.first);
+        this.loginForm.controls.lastName.updateValue(emp.last);
     }    
 }

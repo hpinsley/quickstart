@@ -10,7 +10,9 @@
             </div>
         </form>
         <div>
-            <button class="btn btn-primary" (click)="addEmployee()">Add</button>            
+            <button [hidden]='selectedEmployee' class="btn btn-primary" (click)="addEmployee()">Add</button>            
+            <button [hidden]='!selectedEmployee' class="btn btn-primary" (click)="updateEmployee()">Update</button>            
+            <button class="btn btn-primary" (click)="clearSelectedEmployee()">Clear</button>            
         </div>
     </div>
 </div>
