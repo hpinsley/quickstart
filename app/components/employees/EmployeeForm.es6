@@ -11,7 +11,7 @@ import {EmployeeList} from './EmployeeList'
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
-    directives: [NgControlGroup, NgFormModel]
+    directives: [NgFormModel]
 })
 
 export class EmployeeForm {
