@@ -1,6 +1,5 @@
 import {Observable, EventEmitter, ComponentAnnotation as Component, ViewAnnotation as View, bootstrap, NgFor} from 'angular2/angular2'
 import {Employee} from './employee'
-import {AutoTable} from '../directives/AutoTable'
 
 @Component({
     selector: 'employee-list',
@@ -8,7 +7,7 @@ import {AutoTable} from '../directives/AutoTable'
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
-    directives: [NgFor, AutoTable]
+    directives: [NgFor]
 })
 
 // Component controller
