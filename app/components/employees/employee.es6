@@ -14,6 +14,7 @@ export class Employee {
     }
     
     set lastName(val) {
+        console.log("Setting last name of ", this.fullName, "to be", val);
         this.last = val;
     }
     
@@ -22,6 +23,7 @@ export class Employee {
     }
     
     set firstName(val) {
+        console.log("Setting first name of ", this.fullName, "to be", val);
         this.first = val;
     }
 }

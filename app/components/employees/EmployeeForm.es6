@@ -35,6 +35,8 @@ export class EmployeeForm {
     }
     
     addEmployee() {
+        console.log("Selected employee is ", this.selectedEmployee);
+        
         if (!this.loginForm.valid) {
             alert('Please specify all the input fields.');
         }

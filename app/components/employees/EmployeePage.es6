@@ -15,7 +15,9 @@ import {EmployeeList} from './EmployeeList'
 export class EmployeePage {
     
     constructor() {
-        this.selectedEmployee = new Employee("emppage","emppage");
+        this.selectedEmployee = new Employee("","");
+        this.selectedEmployee.firstName = "Page first";
+        this.selectedEmployee.lastName = "Page last";
         this.age = 10;
     }
     
