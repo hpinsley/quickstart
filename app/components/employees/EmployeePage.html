@@ -1,8 +1,8 @@
 <div class="grid">
     <div class="grid-cell">
-		<employee-form></employee-form>
+		<employee-form [age]="age" [emp]="selectedEmployee"></employee-form>
     </div>
     <div class="grid-cell">
-		<employee-list></employee-list>
+		<employee-list (select)="selectEmployee($event)"></employee-list>
     </div>
 </div>

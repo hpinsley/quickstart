@@ -10,6 +10,10 @@
             </div>
         </form>
         <div>
+            Selected Employee: {{getEmployeeName()}}
+        </div>
+        <div>Age: {{age}}</div>
+        <div>
             <button [hidden]='selectedEmployee' class="btn btn-primary" (click)="addEmployee()">Add</button>            
             <button [hidden]='!selectedEmployee' class="btn btn-primary" (click)="updateEmployee()">Update</button>            
             <button class="btn btn-primary" (click)="clearSelectedEmployee()">Clear</button>            

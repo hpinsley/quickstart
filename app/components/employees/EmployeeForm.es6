@@ -6,7 +6,8 @@ import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    appInjector: [FormBuilder]
+    appInjector: [FormBuilder],
+    properties: ["selectedEmployee:emp","age:age"]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
@@ -15,7 +16,6 @@ import {EmployeePage} from './EmployeePage'
 
 export class EmployeeForm {
     
-    
     constructor(@Inject(FormBuilder) builder) {
             
         var self = this;
@@ -23,9 +23,16 @@ export class EmployeeForm {
         this.loginForm = builder.group({
             firstName: ["", Validators.required],
             lastName: ["", Validators.required]
-      }); 
-            
-      this.selectedEmployee = null;      
+      });             
+    }
+    
+    getEmployeeName() {
+        if (this.selectedEmployee) {
+            return this.selectedEmployee.fullName;
+        }
+        else {
+            return 'No one is selected';
+        }
     }
     
     addEmployee() {
