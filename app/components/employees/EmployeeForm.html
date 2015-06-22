@@ -3,10 +3,10 @@
     <div class="panel-body">
         <form class="form" [ng-form-model]="loginForm">
             <div class="form-group">First Name:
-                <input class="form-control" id="firstName" type="text" control="firstName">
+                <input class="form-control" id="firstName" #firstName type="text" [value]="selectedEmployee.firstName">
             </div>
             <div class="form-group">Last name:
-                <input class="form-control" id="lastName" type="text" control="lastName">
+                <input class="form-control" id="lastName" #lastName type="text" [value]="selectedEmployee.lastName">
             </div>
         </form>
         <div>

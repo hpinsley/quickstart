@@ -1,5 +1,5 @@
 import {Observable, ParentAnnotation as Parent, InjectAnnotation as Inject, ComponentAnnotation as Component, ViewAnnotation as View} from 'angular2/angular2'
-import {formDirectives, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder} from 'angular2/forms';
+import {formDirectives, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder, NgModel} from 'angular2/forms';
 
 import {Employee} from './employee'
 import {EmployeePage} from './EmployeePage'
@@ -11,7 +11,7 @@ import {EmployeePage} from './EmployeePage'
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
-    directives: [NgFormModel]
+    directives: [NgFormModel, NgModel]
 })
 
 export class EmployeeForm {
@@ -19,11 +19,10 @@ export class EmployeeForm {
     constructor(@Inject(FormBuilder) builder) {
             
         var self = this;
-                
-        this.loginForm = builder.group({
-            firstName: ["", Validators.required],
-            lastName: ["", Validators.required]
-      });             
+        this.selectedEmployee = new Employee("form","form");
+        
+        this.loginForm = builder.group({ firstName: ["", Validators.required],
+            lastName: ["", Validators.required]});             
     }
     
     getEmployeeName() {
