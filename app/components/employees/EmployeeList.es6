@@ -55,7 +55,8 @@ export class EmployeeList {
         var index = this.employees.indexOf(emp);
         console.log('Found ' + emp.fullName + ' at index ' + index);
         this.employees.splice(index, 1);
-    }    
+    }
+        
     changeToLauren() {
         this.employees[0].first = "Lauren";
         console.log("The first employee is now " + this.employees[0].fullName);
