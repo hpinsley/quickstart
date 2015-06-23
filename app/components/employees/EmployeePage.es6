@@ -22,7 +22,7 @@ export class EmployeePage {
     }
     
     selectEmployee(emp) {
-        console.log("Employee selected:", emp);
+        console.log("(From employee page): Employee selected:", emp);
         this.selectedEmployee = emp;
         this.age += 1;
         console.log("Age is now ", this.age);

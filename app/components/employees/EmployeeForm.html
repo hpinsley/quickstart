@@ -1,20 +1,16 @@
 <h2>Employee Form</h2>
 <div class="panel panel-primary">
     <div class="panel-body">
-        <form class="form" [ng-form-model]="loginForm">
-            <div class="form-group">First Name:
-                <input class="form-control" id="firstName" #first type="text" (keyup) [(value)]="selectedEmployee.firstName">
-                <div>First name control: {{first.value}}</div>
+        <form class="form">
+            <div class="form-group">
+                First Name:
+                <input class="form-control" id="firstname" #first type="text" (keyup) [value]='firstName' (change)='onChange($event, first.value)'>
             </div>
-            <div class="form-group">Last name:
-                <input class="form-control" id="lastName" #last type="text" (keyup) [(value)]="selectedEmployee.lastName">
-                <div>Last name control: {{last.value}}</div>
+            <div class="form-group">
+                Last name:
+                <input class="form-control" id="lastname" #last type="text" (keyup) [value]='lastName' (change)='onChange($event, last.value)'>
             </div>
         </form>
-        <div>
-            Selected Employee: {{getEmployeeName()}}
-        </div>
-        <div>Age: {{age}}</div>
         <div>
             <button [hidden]='selectedEmployee' class="btn btn-primary" (click)="addEmployee()">Add</button>            
             <button [hidden]='!selectedEmployee' class="btn btn-primary" (click)="updateEmployee()">Update</button>            

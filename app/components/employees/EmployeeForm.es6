@@ -6,23 +6,25 @@ import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    appInjector: [FormBuilder],
+    appInjector: [],
     properties: ["selectedEmployee:emp","age:age"]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
-    directives: [NgFormModel, NgModel]
+    directives: []
 })
 
 export class EmployeeForm {
     
-    constructor(@Inject(FormBuilder) builder) {
-            
+    constructor() {
         var self = this;
-        this.selectedEmployee = new Employee("form","form");
-        
-        this.loginForm = builder.group({ firstName: ["", Validators.required],
-            lastName: ["", Validators.required]});             
+        this.selectedEmployee = new Employee('empfirst','emplast');
+        this.firstName = 'initfirst';
+        this.lastName = 'initlast';
+    }
+    
+    onChange($event, val) {
+        console.log($event, val);
     }
     
     getEmployeeName() {
@@ -62,14 +64,12 @@ export class EmployeeForm {
 
     clearSelectedEmployee() {
         this.selectedEmployee = null;
-        this.loginForm.controls.firstName.updateValue('');
-        this.loginForm.controls.lastName.updateValue('');
     }
     
     selectEmployee(emp) {
         console.log('selected (in EmployeeForm)', emp);
         this.selectedEmployee = emp;
-        this.loginForm.controls.firstName.updateValue(emp.first);
-        this.loginForm.controls.lastName.updateValue(emp.last);
+        this.firstName = emp.firstName;
+        this.lastName = emp.lastName;
     }    
 }
