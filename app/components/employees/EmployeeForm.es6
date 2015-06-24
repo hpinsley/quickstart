@@ -1,22 +1,39 @@
 import {Observable, ParentAnnotation as Parent, InjectAnnotation as Inject, ComponentAnnotation as Component, ViewAnnotation as View} from 'angular2/angular2'
-import {formDirectives, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder, NgModel} from 'angular2/forms';
+import {formDirectives, NgForm, NgControlName, Control, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder, NgModel} from 'angular2/forms';
 
 import {Employee} from './employee'
 import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    appInjector: [],
+    appInjector: [FormBuilder],
     properties: ["selectedEmployee:emp","age:age"]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
-    directives: []
+    //directives: [NgFormModel, NgFormControl, NgModel, NgControlName, NgForm]
+    directives: [formDirectives]
 })
 
 export class EmployeeForm {
     
-    constructor() {
+    constructor(@Inject(FormBuilder) fb) {
+        this.message = '';
+        this.todoForm = fb.group({
+            "message": ["something todo soon...", Validators.required]
+        });
+
+        this.model = {
+            firstName: "first"
+        }
+        this.firstName = "";
+        //this.firstNameControl = new Control('firstNameControl');
+        
+        //this.form = fb.group({
+        //    firstname: ["", Validators.required],
+        //    lastname: ["", Validators.required]
+        //}); 
+
         var self = this;
         this.selectedEmployee = new Employee('empfirst','emplast');
         this.firstName = 'initfirst';
