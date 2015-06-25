@@ -1,12 +1,12 @@
 <h2>Employee Form</h2>
 <div class="panel panel-primary">
     <div class="panel-body">
-        <form class="form" [ng-form-model]="loginForm">
+        <form class="form" id='loginForm' ng-form>
             <div class="form-group">First Name:
-                <input class="form-control" id="firstname" #firstname type="text" [(ng-model)]="firstname.value" ng-control="firstname">
+                <input class="form-control" id="firstname" (keyup) type="text" ng-model="first">
             </div>
             <div class="form-group">Last name:
-                <input class="form-control" id="lastname" #lastname type="text" [(ng-model)]="lastname.value" ng-control="lastname">
+                <input class="form-control" id="lastname" (keyup) type="text" ng-model="last">
             </div>
         </form>
         <div>

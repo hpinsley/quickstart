@@ -5,7 +5,7 @@ import {Observable, ParentAnnotation as Parent, InjectAnnotation as Inject, Comp
 //import { Renderer } from 'angular2/render';
 //import { Directive } from 'angular2/annotations';
 
-import {formDirectives, NgControlName, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder} from 'angular2/forms';
+import {formDirectives, NgForm, NgModel, NgControlName, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder} from 'angular2/forms';
 
 import {Employee} from './employee'
 import {EmployeePage} from './EmployeePage'
@@ -19,7 +19,7 @@ import {EmployeeList} from './EmployeeList'
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html',
-    directives: [NgFormModel, NgFormControl, NgControlName]
+    directives: [NgForm, NgFormModel, NgFormControl, NgControlName, NgModel]
 })
 
 export class EmployeeForm {
@@ -33,10 +33,12 @@ export class EmployeeForm {
         this.last = "last";
         
         this.employeeList = empList; 
-        this.loginForm = builder.group({
-            firstname: ["first", Validators.required],
-            lastname: ["last", Validators.required]
-      });
+        
+        
+        //this.loginForm = builder.group({
+        //    firstname: ["first", Validators.required],
+        //    lastname: ["last", Validators.required]
+      //});
       
       
       
@@ -54,6 +56,9 @@ export class EmployeeForm {
     }
     
     addEmployee() {
+        console.log("first: ", this.first, "last: ", this.last);
+        
+        /*
         if (!this.loginForm.valid) {
             alert('Please specify all the input fields.');
         }
@@ -62,6 +67,7 @@ export class EmployeeForm {
                                            this.loginForm.controls.lastName.value);
             this.employeeList.addEmployee(newEmployee);
         }
+        */
     }
     
     updateEmployee() {
