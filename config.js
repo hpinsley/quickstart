@@ -6,7 +6,7 @@ System.config({
     "github:*": "jspm_packages/github/*.js",
     'angular2/*':'node_modules/angular2/*.js',
     'rtts_assert/*': '/rtts_assert/*.js',
-    'rx/*': 'node_modules/rx/dist/*.js',
+    //'rx/*': 'node_modules/rx/dist/*.js',
     'pattern_search/*': '/pattern_search/*.js',
     'index': 'index.js'        
   }
