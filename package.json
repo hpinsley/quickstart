@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.27",
+    "angular2": "^2.0.0-alpha.28",
     "es6-module-loader": "0.16.5",
     "reflect-metadata": "^0.1.0",
     "rx": "^2.5.1",

@@ -1,17 +1,9 @@
-import {Observable, ParentAnnotation as Parent, InjectAnnotation as Inject, ComponentAnnotation as Component, ViewAnnotation as View} from 'angular2/angular2'
-//import {FormBuilder, Validators, NgControlGroup, NgFormControl, NgFormModel, NgControl} from 'angular2/forms';
-
-//import { ElementRef } from 'angular2/core';
-//import { Renderer } from 'angular2/render';
-//import { Directive } from 'angular2/annotations';
-
+import {Observable, ParentAnnotation as Parent, Inject, ComponentAnnotation as Component, ViewAnnotation as View} from 'angular2/angular2'
 import {formDirectives, NgForm, NgModel, NgControlName, NgControl, Validators, NgFormModel, NgFormControl, FormBuilder} from 'angular2/forms';
 
 import {Employee} from './employee'
 import {EmployeePage} from './EmployeePage'
 import {EmployeeList} from './EmployeeList'
-
-//console.log(FormBuilder, Validators, NgFormControl, NgFormModel, NgControl);
 
 @Component({
     selector: 'employee-form',
@@ -48,11 +40,11 @@ export class EmployeeForm {
       
       this.selectedEmployee = null;
       
-      var subscription = this.employeeList.select._subject._subscribe({
-        onNext: self.selectEmployee.bind(self)
-      });
+      //var subscription = this.employeeList.select._subject._subscribe({
+      //  onNext: self.selectEmployee.bind(self)
+      //});
       
-      console.log('Subscription return value', subscription);
+      //console.log('Subscription return value', subscription);
     }
     
     addEmployee() {
@@ -71,6 +63,7 @@ export class EmployeeForm {
     }
     
     updateEmployee() {
+        /*
         if (!this.loginForm.valid) {
             alert('Please specify all the input fields.');
         }
@@ -81,6 +74,7 @@ export class EmployeeForm {
             this.selectedEmployee.first = this.loginForm.controls.firstName.value;
             this.selectedEmployee.last = this.loginForm.controls.lastName.value;
         }
+        */
     }
 
     clearSelectedEmployee() {

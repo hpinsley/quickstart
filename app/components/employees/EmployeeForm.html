@@ -1,18 +1,3 @@
-<h2>Employee Form</h2>
-<div class="panel panel-primary">
-    <div class="panel-body">
-        <form class="form" id='loginForm' ng-form>
-            <div class="form-group">First Name:
-                <input class="form-control" id="firstname" (keyup) type="text" ng-model="first">
-            </div>
-            <div class="form-group">Last name:
-                <input class="form-control" id="lastname" (keyup) type="text" ng-model="last">
-            </div>
-        </form>
-        <div>
-            <button [hidden]='selectedEmployee' class="btn btn-primary" (click)="addEmployee()">Add</button>            
-            <button [hidden]='!selectedEmployee' class="btn btn-primary" (click)="updateEmployee()">Update</button>            
-            <button class="btn btn-primary" (click)="clearSelectedEmployee()">Clear</button>            
-        </div>
-    </div>
-</div>
+<form>
+	<input type="text" ng-control [(ng-model)]="first">
+</form>
