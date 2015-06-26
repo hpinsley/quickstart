@@ -4,32 +4,15 @@ import {MainMenu} from './components/menus/MainMenu'
 //import {reflector} from 'angular2/src/reflection/reflection';
 //import {ReflectionCapabilities} from 'angular2/src/reflection/reflection_capabilities';
 import {ModelDrivenForms} from './components/examples/ModelDrivenForms'
-import Rx from 'rx';
-
-class MyObserver {
-    constructor() {
-        console.log("Constructed MyObserver");
-    }
-    
-    onNext(val) {
-        console.log("val", val);
-    }
-    
-    onError(error) {
-        console.log("error", error);
-    }
-    
-    onDone() {
-        console.log("done");
-    }
-}
+import Rx from 'node_modules/rx/dist/rx.all';
+import {MousePlay} from './components/rx/MousePlay/MousePlay'
 
 @Component({
     selector: 'my-app'
 })
 @View({
     templateUrl: 'app/app.html',
-    directives: [EmployeePage, MainMenu, ModelDrivenForms]
+    directives: [EmployeePage, MainMenu, ModelDrivenForms, MousePlay]
 })
 export class MyAppComponent {
     
@@ -40,6 +23,7 @@ export class MyAppComponent {
     testRx() {
         let self = this;
         console.log("MyAppComponent has been constructed");
+        console.log("Rx", Rx);
         this.result = Rx;
         this.observable = Rx.Observable.fromArray([1,2,3,4,5])
                 .map(v => v * v)
