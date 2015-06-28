@@ -15,8 +15,9 @@ System.config(
   //       }
   //  },
    "map": {
+     //"angular2" : "node_modules/angular2",
     // "traceur": "github:jmcriffey/bower-traceur@0.0.88",
     // "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88",
-    //"rx" : "node_modules/rx/dist/rx.all"
+    //"rx" : "node_modules/rx/dist/rx"
   }
 });

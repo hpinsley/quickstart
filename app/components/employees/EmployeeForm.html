@@ -1,6 +1,14 @@
-<h2>Employee Form</h2>
-
-<form>
-    <label>Last name</label>
-    <input type='text' id="last" ng-control="last" [(ng-model)]="model.last" />
+<form ng-form="form" #f>
+    <div class="form-group">
+        <label>Last name</label>
+        <input type='text' #last id="last" ng-control="last" (keyup)="onKeyUp(last.value)" />
+    </div>
+    <div class="form-group">
+        <input type="button" (click)="onSubmit()" class="btn btn-default" value="Add" />
+    </div>
 </form>
+<div>
+    <svg>
+        <circle cx="200", cy="50" r="50"" fill="red"></circle>
+    </svg>
+</div>
