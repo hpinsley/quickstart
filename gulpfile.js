@@ -31,7 +31,7 @@ gulp.task('compile', function() {
     var files = config.typescriptFiles;
 
     var options = {
-        "typescript": require('typescript'),
+        "typescript": require('typescript'),    //to use 1.5-beta
         "emitDecoratorMetadata": true,
         "sourceMap": true,
         "module": "commonjs",
