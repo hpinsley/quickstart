@@ -1,8 +1,6 @@
 /// <reference path="./EmployeePage.ts" />
 
 import {Component, View, ControlGroup, Control, formDirectives} from 'angular2/angular2'
-
-
 import {Employee} from './employee'
 import {EmployeePage} from './EmployeePage'
 
@@ -13,7 +11,7 @@ import {EmployeePage} from './EmployeePage'
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html'
 })
-// Component controller
+
 export class EmployeeForm {
 
     employee: Employee;
@@ -23,7 +21,7 @@ export class EmployeeForm {
     constructor() {
         console.log('Constructed the employee form');
         this.employee = new Employee("dummy", "fake");
-        
+       
         // this.empForm = new ControlGroup();
         // this.lastNameCtl = new Control();
         // this.empForm.addControl('lastNameCtl', this.lastNameCtl);

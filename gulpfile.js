@@ -15,10 +15,10 @@ gulp.task('default', function() {
 
 gulp.task('styles', function() {
     return gulp
-        .src(config.styles)
+        .src(config.styles, {base: './'})
         .pipe($.print())
         .pipe($.scss())
-        .pipe(gulp.dest(config.build));    
+        .pipe(gulp.dest('.'));    
 });
 
 gulp.task('clean', function(done) {
