@@ -5,7 +5,7 @@ var Employee = (function () {
     }
     Object.defineProperty(Employee.prototype, "fullName", {
         get: function () {
-            return this.first + " " + this.last;
+            return this.last + ", " + this.first;
         },
         enumerable: true,
         configurable: true
@@ -13,4 +13,3 @@ var Employee = (function () {
     return Employee;
 })();
 exports.Employee = Employee;
-//# sourceMappingURL=employee.js.map

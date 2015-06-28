@@ -10,6 +10,12 @@ module.exports = function() {
          * File paths
          */
 
+        typescriptFiles: [
+          "scripts/app.ts",
+          "app/components/**/*.ts"
+        ],
+
+
         alles6: [
             client + '**/*.es6'
         ],

@@ -1,7 +1,6 @@
-/// <reference path="../../../typings/tsd.d.ts" />
 /// <reference path="./EmployeePage.ts" />
 
-import {Component, View, FormControlDirective, ControlGroup, Control, FormModelDirective} from 'angular2/angular2'
+import {Component, View, ControlGroup, Control, formDirectives} from 'angular2/angular2'
 
 
 import {Employee} from './employee'
@@ -9,7 +8,7 @@ import {EmployeePage} from './EmployeePage'
 
 @Component({
     selector: 'employee-form',
-    directives: [FormControlDirective, ControlGroup, Control]
+    directives: [formDirectives, ControlGroup, Control]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeForm.html'

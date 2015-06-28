@@ -26,18 +26,27 @@ gulp.task('clean', function(done) {
     del(config.build, done);
 });
 
-gulp.task('compile', ['clean','styles'], function() {
-    return gulp
-        .src(config.alles6)
-        .pipe($.if(args.verbose, $.print()))
-        .pipe($.plumber()) // exit gracefully if something fails after this
-        .pipe($.traceur(config.traceur.options))
-        .pipe($.rename({extname:".js"}))
-        .pipe(gulp.dest(config.build));    
+gulp.task('compile', function() {
+   
+    var files = config.typescriptFiles;
+
+    var options = {
+        "typescript": require('typescript'),
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es5"
+    };
+   
+    var tsResult = gulp.src(files, {base: './'})
+        .pipe($.print())
+        .pipe($.typescript(options));
+        
+    return tsResult.js.pipe(gulp.dest('.'));
 });
 
 gulp.task('watch-code', function() {
-    gulp.watch([config.alles6, config.styles], ['compile']);    
+    gulp.watch([config.typescriptFiles], ['compile']);    
 });
 
 //gulp.task('help', $.taskListing);

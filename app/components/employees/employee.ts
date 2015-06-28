@@ -14,6 +14,6 @@ export class Employee implements  IEmployee {
     }
 
     get fullName() {
-        return this.first + " " + this.last;
+        return this.last + ", " + this.first;
     }
 }

@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
 /// <reference path="./EmployeePage.ts" />
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +30,7 @@ var EmployeeForm = (function () {
     EmployeeForm = __decorate([
         angular2_1.Component({
             selector: 'employee-form',
-            directives: [angular2_1.FormControlDirective, angular2_1.ControlGroup, angular2_1.Control]
+            directives: [angular2_1.formDirectives, angular2_1.ControlGroup, angular2_1.Control]
         }),
         angular2_1.View({
             templateUrl: 'app/components/employees/EmployeeForm.html'
@@ -41,4 +40,3 @@ var EmployeeForm = (function () {
     return EmployeeForm;
 })();
 exports.EmployeeForm = EmployeeForm;
-//# sourceMappingURL=EmployeeForm.js.map
