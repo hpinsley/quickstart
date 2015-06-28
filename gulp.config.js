@@ -11,8 +11,7 @@ module.exports = function() {
          */
 
         typescriptFiles: [
-          "scripts/app.ts",
-          "app/components/**/*.ts"
+          "app/**/*.ts"
         ],
 
 

@@ -15,7 +15,7 @@ gulp.task('default', function() {
 
 gulp.task('styles', function() {
     return gulp
-        .src(config.styles)
+        .src(config.styles, {base: './'})
         .pipe($.print())
         .pipe($.scss())
         .pipe(gulp.dest(config.build));    
