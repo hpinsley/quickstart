@@ -44,12 +44,17 @@ gulp.task('compile', function() {
         .pipe($.typescript(options));
         
     return tsResult.js
-        .pipe($.sourcemaps.write())
+        .pipe($.print())
+        .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(config.build));
 });
 
+gulp.task('build', ['clean', 'styles', 'compile'], function() {
+    
+});
+
 gulp.task('watch-code', function() {
-    gulp.watch([config.typescriptFiles], ['compile']);    
+    gulp.watch([config.styles, config.typescriptFiles], ['build']);    
 });
 
 //gulp.task('help', $.taskListing);
