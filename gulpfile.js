@@ -39,10 +39,13 @@ gulp.task('compile', function() {
     };
    
     var tsResult = gulp.src(files, {base: './'})
+        .pipe($.sourcemaps.init())
         .pipe($.print())
         .pipe($.typescript(options));
         
-    return tsResult.js.pipe(gulp.dest(config.build));
+    return tsResult.js
+        .pipe($.sourcemaps.write())
+        .pipe(gulp.dest(config.build));
 });
 
 gulp.task('watch-code', function() {
