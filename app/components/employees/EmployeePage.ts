@@ -12,7 +12,7 @@ import {EmployeeList} from './EmployeeList'
     templateUrl: 'app/components/employees/EmployeePage.html',
     directives: [EmployeeForm, EmployeeList]
 })
-// Component controller
+
 export class EmployeePage {
 
     context : {

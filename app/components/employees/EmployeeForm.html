@@ -1,6 +1,6 @@
 <h2>Employee Form</h2>
-<div>Current employee: {{employee.fullName}}</div>
-<!--<form [ng-form-model]='empForm'>
-    Last name: <input type='text' ng-control='lastNameCtl'>
-    <button (click)="onUpdate()">Update</button>
-</form>-->
+
+<form>
+    <label>Last name</label>
+    <input type='text' id="last" ng-control="last" [(ng-model)]="model.last" />
+</form>

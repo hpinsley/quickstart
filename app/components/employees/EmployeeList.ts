@@ -1,17 +1,12 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-/// <reference path="./EmployeePage.ts" />
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
 import {Employee} from './employee'
-import {EmployeeForm} from './EmployeeForm'
 
 @Component({
     selector: 'employee-list'
-    //componentServices: [EmployeeForm]
-    //appInjector: [EmployeeForm]
 })
 @View({
     templateUrl: 'app/components/employees/EmployeeList.html',
-    directives: [NgFor, EmployeeForm]
+    directives: [NgFor]
 })
 
 // Component controller
