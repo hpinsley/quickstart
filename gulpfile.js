@@ -15,10 +15,10 @@ gulp.task('default', function() {
 
 gulp.task('styles', function() {
     return gulp
-        .src(config.styles, {base: './'})
+        .src(config.styles)
         .pipe($.print())
         .pipe($.scss())
-        .pipe(gulp.dest('.'));    
+        .pipe(gulp.dest(config.build));    
 });
 
 gulp.task('clean', function(done) {
@@ -42,7 +42,7 @@ gulp.task('compile', function() {
         .pipe($.print())
         .pipe($.typescript(options));
         
-    return tsResult.js.pipe(gulp.dest('.'));
+    return tsResult.js.pipe(gulp.dest(config.build));
 });
 
 gulp.task('watch-code', function() {
