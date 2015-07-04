@@ -5,31 +5,24 @@ import * as ang from 'angular2/angular2';
 
 @Component({
     selector: 'employee-form',
-    directives: [formDirectives],
     appInjector: [FormBuilder]
 })
 @View({
-    templateUrl: 'app/components/employees/EmployeeForm.html'
+    templateUrl: 'app/components/employees/EmployeeForm.html',
+    directives: [formDirectives]
 })
 
 export class EmployeeForm {
 
-    model: Employee;
     empform: ControlGroup;
-    last: Control;
-    cx: number;
         
     constructor(fb:FormBuilder) {
         
-        // this.empform = fb.group({
-        //       "last": ["Hello", Validators.required]
-        // });
+        this.empform = fb.group({
+               last : ["Jones", Validators.required]
+        });
  
-        this.last = new Control();
-
         console.log('Constructed the employee form');
-        this.model = new Employee("first", "last");
-        this.cx = 200;        
     }
     onSubmit() {
         console.log("Form submitted");
